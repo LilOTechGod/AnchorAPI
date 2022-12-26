@@ -140,3 +140,25 @@ footer {
   margin-left: 5px;
   border-radius: 10px;
 }
+.chip {
+  display: inline-block;
+  padding: 0 0px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: #eef0fd;
+  margin-left: 10px;
+  margin-top: -3px;
+}
+
+.chip img {
+  float: left;
+  margin: 0 10px 0 -20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.chip span {
+  padding-right: 20px;
+}

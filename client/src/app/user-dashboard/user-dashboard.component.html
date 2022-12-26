@@ -2,8 +2,8 @@
   <p class="pleaselogin" *ngIf="message.email == null">Please Login!</p>
   <div class="userdash">
     <div class="profile">
-      <div class="userinfo">
-        <div class="img-div">
+      <!-- <div class="userinfo"> -->
+      <!-- <div class="img-div">
           <img
             src="https://cdn1.iconfinder.com/data/icons/life-of-amazon-flat/340/tarantula_spider_wildlife_insect_scary_dangerous_poison_amazon-512.png"
             alt="spider icon"
@@ -15,11 +15,24 @@
           <p>Last Name: {{ message.lastName }}</p>
           <p>Email Address: {{ message.email }}</p>
         </div>
+      </div> -->
+
+      <div class="card">
+        <img
+          src="https://cdn1.iconfinder.com/data/icons/life-of-amazon-flat/340/tarantula_spider_wildlife_insect_scary_dangerous_poison_amazon-512.png"
+          alt="Avatar"
+          style="width: 100%"
+        />
+        <div class="container">
+          <div class="">
+            <p>First Name: {{ message.firstName }}</p>
+            <p>Last Name: {{ message.lastName }}</p>
+            <p>Email Address: {{ message.email }}</p>
+          </div>
+        </div>
       </div>
       <div class="about">
-        <div class="h-about">
-          <span>About</span>
-        </div>
+        <div class="h-about"></div>
         <div class="info-about">
           <div>
             <img

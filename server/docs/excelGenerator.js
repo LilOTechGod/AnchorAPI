@@ -1,6 +1,7 @@
 var xl = require('excel4node');
 const testData = [{ name: "me", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" },]
-
+const axios = require("axios")
+const flatten = require("flat")
 // Create a new instance of a Workbook class
 function generateExcel(data) {
     var wb = new xl.Workbook();
@@ -54,5 +55,25 @@ function generateExcel(data) {
     //change this depending on where you want to be built/ where you put the data
     wb.write('./docs/Excel.xlsx');
 }
+const options = {
+    method: 'GET',
+    url: 'https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI',
+    params: { q: 'taylor swift', pageNumber: '1', pageSize: '10', autoCorrect: 'true' },
+    headers: {
+        'X-RapidAPI-Key': '29018514f3msh527e9a0f194d3a7p1c46ccjsn4a2648e61b10',
+        'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
+    }
+};
+axios.request(options).then((data) => {
+    let dats = data
+    const runFlatten = async () => {
+        let result = await flatten(data);
+        console.log(result)
+        return result
+    }
+    console.log(runFlatten())
+})
+
+
 
 module.exports = generateExcel

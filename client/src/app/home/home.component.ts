@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { TestScheduler } from 'rxjs/testing';
 import { UserAuthService } from '../user-auth.service';
 
 @Component({
@@ -37,7 +38,7 @@ export class HomeComponent implements OnInit {
         this.getJsonValue = data;
       });
   }
-
+  //un collapes to see data
   data: {
     name: string;
     creator: string;
@@ -103,7 +104,198 @@ export class HomeComponent implements OnInit {
       discussion: ['this is amazing', 'great api', 'wow this api does great'],
       dateupdated: '2 months ago',
     },
+    {
+      name: 'Coming Soon',
+      creator: 'achorapi',
+      url: 'http://localhost:4000/endpoint/',
+      imgurl:
+        'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
+      desc: 'This will soon be an api',
+      popularity: '0/10',
+      endpoint: {
+        apiurl: 'string',
+        qureyparamter: [
+          ' Params: params=<string>.',
+          "example: params=nails '",
+          ' Description: this is the term you would like to look up example.',
+        ],
+      },
+      discussion: ['this is amazing', 'great api', 'wow this api does great'],
+      dateupdated: 'In developement',
+    },
+    {
+      name: 'Coming Soon',
+      creator: 'achorapi',
+      url: 'http://localhost:4000/endpoint/',
+      imgurl:
+        'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
+      desc: 'This will soon be an api',
+      popularity: '0/10',
+      endpoint: {
+        apiurl: 'string',
+        qureyparamter: [
+          ' Params: params=<string>.',
+          "example: params=nails '",
+          ' Description: this is the term you would like to look up example.',
+        ],
+      },
+      discussion: ['this is amazing', 'great api', 'wow this api does great'],
+      dateupdated: 'In developement',
+    },
+    {
+      name: 'Coming Soon',
+      creator: 'achorapi',
+      url: 'http://localhost:4000/endpoint/',
+      imgurl:
+        'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
+      desc: 'This will soon be an api',
+      popularity: '0/10',
+      endpoint: {
+        apiurl: 'string',
+        qureyparamter: [
+          ' Params: params=<string>.',
+          "example: params=nails '",
+          ' Description: this is the term you would like to look up example.',
+        ],
+      },
+      discussion: ['this is amazing', 'great api', 'wow this api does great'],
+      dateupdated: 'In developement',
+    },
+    {
+      name: 'Coming Soon',
+      creator: 'achorapi',
+      url: 'http://localhost:4000/endpoint/',
+      imgurl:
+        'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
+      desc: 'This will soon be an api',
+      popularity: '0/10',
+      endpoint: {
+        apiurl: 'string',
+        qureyparamter: [
+          ' Params: params=<string>.',
+          "example: params=nails '",
+          ' Description: this is the term you would like to look up example.',
+        ],
+      },
+      discussion: ['this is amazing', 'great api', 'wow this api does great'],
+      dateupdated: 'In developement',
+    },
+    {
+      name: 'Coming Soon',
+      creator: 'achorapi',
+      url: 'http://localhost:4000/endpoint/',
+      imgurl:
+        'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
+      desc: 'This will soon be an api',
+      popularity: '0/10',
+      endpoint: {
+        apiurl: 'string',
+        qureyparamter: [
+          ' Params: params=<string>.',
+          "example: params=nails '",
+          ' Description: this is the term you would like to look up example.',
+        ],
+      },
+      discussion: ['this is amazing', 'great api', 'wow this api does great'],
+      dateupdated: 'In developement',
+    },
+    {
+      name: 'Coming Soon',
+      creator: 'achorapi',
+      url: 'http://localhost:4000/endpoint/',
+      imgurl:
+        'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
+      desc: 'This will soon be an api',
+      popularity: '0/10',
+      endpoint: {
+        apiurl: 'string',
+        qureyparamter: [
+          ' Params: params=<string>.',
+          "example: params=nails '",
+          ' Description: this is the term you would like to look up example.',
+        ],
+      },
+      discussion: ['this is amazing', 'great api', 'wow this api does great'],
+      dateupdated: 'In developement',
+    },
+    {
+      name: 'Coming Soon',
+      creator: 'achorapi',
+      url: 'http://localhost:4000/endpoint/',
+      imgurl:
+        'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
+      desc: 'This will soon be an api',
+      popularity: '0/10',
+      endpoint: {
+        apiurl: 'string',
+        qureyparamter: [
+          ' Params: params=<string>.',
+          "example: params=nails '",
+          ' Description: this is the term you would like to look up example.',
+        ],
+      },
+      discussion: ['this is amazing', 'great api', 'wow this api does great'],
+      dateupdated: 'In developement',
+    },
+    {
+      name: 'Coming Soon',
+      creator: 'achorapi',
+      url: 'http://localhost:4000/endpoint/',
+      imgurl:
+        'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
+      desc: 'This will soon be an api',
+      popularity: '0/10',
+      endpoint: {
+        apiurl: 'string',
+        qureyparamter: [
+          ' Params: params=<string>.',
+          "example: params=nails '",
+          ' Description: this is the term you would like to look up example.',
+        ],
+      },
+      discussion: ['this is amazing', 'great api', 'wow this api does great'],
+      dateupdated: 'In developement',
+    },
+    {
+      name: 'Coming Soon',
+      creator: 'achorapi',
+      url: 'http://localhost:4000/endpoint/',
+      imgurl:
+        'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
+      desc: 'This will soon be an api',
+      popularity: '0/10',
+      endpoint: {
+        apiurl: 'string',
+        qureyparamter: [
+          ' Params: params=<string>.',
+          "example: params=nails '",
+          ' Description: this is the term you would like to look up example.',
+        ],
+      },
+      discussion: ['this is amazing', 'great api', 'wow this api does great'],
+      dateupdated: 'In developement',
+    },
+    {
+      name: 'Coming Soon',
+      creator: 'achorapi',
+      url: 'http://localhost:4000/endpoint/',
+      imgurl:
+        'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
+      desc: 'This will soon be an api',
+      popularity: '0/10',
+      endpoint: {
+        apiurl: 'string',
+        qureyparamter: [
+          ' Params: params=<string>.',
+          "example: params=nails '",
+          ' Description: this is the term you would like to look up example.',
+        ],
+      },
+      discussion: ['this is amazing', 'great api', 'wow this api does great'],
+      dateupdated: 'In developement',
+    },
   ];
+
   getAPIs() {
     return (this.apiList = this.data);
   }
@@ -116,24 +308,57 @@ export class HomeComponent implements OnInit {
   curFun() {
     this.selectedapi.changeAPIData(this.data[2]);
   }
+  comSoon() {
+    this.selectedapi.changeAPIData(this.data[6]);
+    console.log(this.data);
+  }
   apiCard: any;
   item: any;
   searchIndex: any;
   searchCard: any;
+
+  threereslt: number = 0;
+
   search(item: string) {
     this.apiCard = document.querySelectorAll('.apicontainer');
     this.item = document.querySelector('.searchinput');
+    let save = this.item;
     if (this.item.value !== '') {
       this.item = this.item.value.trim().toLowerCase();
       this.apiCard.forEach((element: any) => {
         element.style.display = 'none';
       });
 
-      this.data.forEach((element, i) => {
+      this.data.forEach((element, e) => {
         let result = element.name.toLowerCase();
+        let threefromdb = result.split('');
+        let threefrominput = this.item.split('');
+
+        // for (let i = 0; i < threefrominput.length; i++) {
+        //   for (let j = 0; j < threefromdb.length; j++) {
+        //     if (threefrominput[j] == threefromdb[i]) {
+        //       this.threereslt++;
+        //     }
+        //   }
+        //   console.log(this.threereslt);
+        //   if (this.threereslt > 3) {
+        //     this.item = result;
+        //     if (result == this.item) {
+        //       this.selectedapi.changeAPIData(this.data[e]);
+        //       this.searchIndex = e;
+        //       this.threereslt = 0;
+        //       return;
+        //     }
+        //   }
+        // }
+        // if (this.threereslt > 3) {
+        //   return;
+        // }
+        // this.threereslt = 0;
+
         if (result == this.item) {
-          this.selectedapi.changeAPIData(this.data[i]);
-          this.searchIndex = i;
+          this.selectedapi.changeAPIData(this.data[e]);
+          this.searchIndex = e;
         }
       });
 

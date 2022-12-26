@@ -4,7 +4,7 @@ const db = require("./config/configDB")
 const dotenv = require("dotenv")
 dotenv.config()
 const routes = require("./routes")
-const {  PORT } = process.env
+const { PORT } = process.env
 
 const app = express()
 // app.use(cors)
@@ -28,3 +28,6 @@ db.once('open', () => {
 
 
 
+
+
+console.log("hello")

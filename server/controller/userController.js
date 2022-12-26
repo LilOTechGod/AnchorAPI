@@ -14,7 +14,6 @@ module.exports = {
             res.status(200).json(userData)
         } catch (error) {
             res.status(400).json({ error, message: "Bad request check body" })
-            console.log(error)
         }
 
 
@@ -33,7 +32,6 @@ module.exports = {
         try {
             const { email, password } = req.body
 
-            console.log(password)
 
 
             let userData = await User.findOne({ email }).populate("access_token_id")
@@ -41,9 +39,9 @@ module.exports = {
             let nameExist = userData.first_name
             let lastExist = userData.last_name
             let accesskey = userData.access_token_id.api_key
-            console.log(userData.password)
             let checkPassword = await bcrypt.compare(password, userData.password)
-            console.log(checkPassword)
+
+
 
             if (checkPassword) {
 
@@ -62,7 +60,7 @@ module.exports = {
     },
     signUp: async (req, res) => {
         try {
-            let apikey = generateApiKey({ min: 30 })
+            let apikey = generateApiKey({ method: "string", pool: "abcdefghijklmnopqrstuvwxyz1234567890", min: 30 })
             //create api key
             let creatApiData = await new Token({ api_key: apikey }).save()
             //retirve api key
@@ -71,9 +69,7 @@ module.exports = {
             let accessTokenId = apiData.id
 
             const { first_name, last_name, email, password } = req.body
-            console.log(password)
             let hashed = await bcrypt.hash(password, 10);
-            console.log(hashed)
 
 
             let userData = await new User({ first_name: first_name, last_name: last_name, email: email, password: hashed, access_token_id: accessTokenId }).save()

@@ -1,6 +1,7 @@
 section {
   min-height: 61vh;
   height: 100%;
+  padding-bottom: 20px;
 }
 .api {
   display: flex;

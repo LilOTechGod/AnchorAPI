@@ -1,4 +1,4 @@
-<nav>
+<nav id="header">
   <div routerLink="/">
     <div class="logo-containers">
       <div class="logo-container">
@@ -26,13 +26,14 @@
     </a>
     <ng-template #logout>
       <a routerLink="/userdash">Profile</a>
-      <div routerLink="/userdash" class="logo-containers">
+      <div routerLink="/userdash" class="chip">
         <img
           class="progile-logo"
           src="https://cdn1.iconfinder.com/data/icons/life-of-amazon-flat/340/tarantula_spider_wildlife_insect_scary_dangerous_poison_amazon-512.png"
           width="40px"
           alt="profile image"
         />
+        <span> {{ message.firstName }} </span>
       </div>
       <a (click)="onSave()">Logout</a>
     </ng-template>

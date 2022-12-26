@@ -27,7 +27,7 @@
     <h4>{{ apiMessage.name }}</h4>
     <p>{{ apiMessage.desc }}</p>
   </div>
-  <div>
+  <div class="dataapi">
     <div class="apicontrol">
       <div class="query">
         <div>
@@ -57,14 +57,18 @@
             <pre></pre>
             <button class="btn btn-primary" type="submit">Submit</button>
           </form>
+          <div class="loading">
+            Loading...
+            <div class="loader"></div>
+          </div>
         </div>
         <div>
-          <button>Download to Excel</button>
+          <button (click)="download()">Download to Excel</button>
         </div>
       </div>
     </div>
     <div class="result-data">
-      <p *ngFor="let item of apiReturnData">{{ item }}</p>
+      <p *ngFor="let item of apiFinalReturn">{{ item }}</p>
     </div>
   </div>
 </section>

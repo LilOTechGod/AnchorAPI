@@ -30,14 +30,14 @@ export class ApidashboardComponent implements OnInit {
   removeString: string[] = ['{', '[', ']', '}'];
 
   apiReturnData: string | any;
+  apiFinalReturn: string | any;
+
   makeRequest(apiurl: any): void {
-    console.log(apiurl);
+    let loading: any = document.querySelector('.loading');
+    loading.style.display = 'block';
     let url = apiurl.form.value.url;
-    console.log(url);
     this.http.get(url).subscribe((res) => {
-      console.log(res);
       let stringify = JSON.stringify(res);
-      console.log(stringify);
       this.apiReturnData = stringify.split(``);
       this.apiReturnData.forEach((el1: any, j: any) => {
         this.removeString.forEach((el2: any, i: any) => {
@@ -47,7 +47,16 @@ export class ApidashboardComponent implements OnInit {
         });
       });
 
-      this.apiReturnData = this.apiReturnData.join('').split(',');
+      this.apiFinalReturn = this.apiReturnData.join('').split(',');
+      if (this.apiFinalReturn) {
+        loading.style.display = 'none';
+        console.log('done');
+      }
     });
+  }
+
+  download() {
+    console.log('hello');
+    window.open('../../assets/anchorlogo.png', 'anchorlogo.png');
   }
 }

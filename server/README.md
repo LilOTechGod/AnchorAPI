@@ -1,30 +1,12 @@
-# Achor API
+# Server
 
 Table of Contents
 
-[1. Description](#Description)  
-[2. Technology](#Tech-Stack)  
-[3. Gettng Started](#Gettng-Started)  
-[4. Installation](#Installation)  
-[5. Demo](#Demo)  
-[6. links ](#links)  
-[7. liscences](#liscences)  
-[8. contact](#contact)
-
 ## Description
 
-This is an api services simular to rapidapi, it over access to multiple API's, with great and clear documention. Check it out!
-Browse through our collections of APIs. Discover and connect learn about our APIs that iscurated and recommended based on functionality offered, performance, and support!
+Server is build using node js and dependencies
 
 ## Tech-Stack
-
-Project is created with:
-Front end:
-
-[![Angular JS](https://img.shields.io/badge/Tech-Angular%20JS-red.svg)](https://opensource.org/licenses/MIT)
-[![Typscript](https://img.shields.io/badge/Tech-Typscript-blue.svg)](https://opensource.org/licenses/MIT)
-[![HTML](https://img.shields.io/badge/Tech-HTML-orange.svg)](https://opensource.org/licenses/MIT)
-[![CSS](https://img.shields.io/badge/Tech-CSS-blue.svg)](https://opensource.org/licenses/MIT)
 
 Backend
 
@@ -69,27 +51,10 @@ then run using
 npm start
 ```
 
-## Demo
-
-![image](https://user-images.githubusercontent.com/63639477/209417889-748377b6-299e-4c59-8d49-87c3a4c0a5c3.png)
-
-## links
-
-add deployed link here
-
 ## Tree
 
 ```
 .
-├── Client
-├── src
-│   ├── App
-│   │    ├── api dash
-│   │    ├── document
-│   │    ├── landing page
-│   │    ├── signup page
-│   │    ├── user dash
-│   │    └── login page
 ├── Server
 │   ├── config
 │   ├── controller
