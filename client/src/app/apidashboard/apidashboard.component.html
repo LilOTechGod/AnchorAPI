@@ -1,0 +1,70 @@
+<section>
+  <div class="topcontainer">
+    <div class="rowcol">
+      <div class="image">
+        <img src="{{ apiMessage.imgurl }}" alt="" width="100px" />
+      </div>
+      <div class="info-container">
+        <div class="info">
+          <h1>{{ apiMessage.name }}</h1>
+          <p>BY: {{ apiMessage.creator }}</p>
+          <p>Rate:{{ apiMessage.popularity }}</p>
+          <img
+            src="https://img.shields.io/badge/Status-Verified-brightgreen"
+            alt=""
+            width="70px"
+            height="20px"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="l-info">
+      <h1>{{ apiMessage.name }}</h1>
+      <p>Last Update: {{ apiMessage.dateupdated }}</p>
+    </div>
+  </div>
+  <div class="sub-heading">
+    <h4>{{ apiMessage.name }}</h4>
+    <p>{{ apiMessage.desc }}</p>
+  </div>
+  <div>
+    <div class="apicontrol">
+      <div class="query">
+        <div>
+          <h3>Method: GET</h3>
+          <p>URL Example : {{ apiMessage.url }}</p>
+          <h3>Query Paramaters</h3>
+          <span>Hint: These Go after the "?" in a URL</span>
+          <p *ngFor="let param of apiMessage.endpoint.qureyparamter">
+            {{ param }}
+          </p>
+        </div>
+      </div>
+      <div class="codesnipe">
+        <div>
+          <h3>Make a request <span>(get only)</span></h3>
+          <form
+            class="form-container"
+            #apiurl="ngForm"
+            (ngSubmit)="makeRequest(apiurl)"
+          >
+            <h1>User Login</h1>
+            <pre></pre>
+            <div class="form-group">
+              <label for="url">URL:</label><br />
+              <input type="text" name="url" class="form-control" ngModel />
+            </div>
+            <pre></pre>
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </form>
+        </div>
+        <div>
+          <button>Download to Excel</button>
+        </div>
+      </div>
+    </div>
+    <div class="result-data">
+      <p *ngFor="let item of apiReturnData">{{ item }}</p>
+    </div>
+  </div>
+</section>

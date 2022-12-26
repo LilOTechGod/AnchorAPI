@@ -1,0 +1,274 @@
+<section>
+  <div class="doc-container">
+    <div class="menu">
+      <div class="banner"></div>
+      <div>
+        <img
+          src="https://cdn3.iconfinder.com/data/icons/geek-3/24/Rubics_Cube_toy_magic_cube_geek-512.png"
+          alt="calender"
+          width="20px"
+        />
+        <span>Getting Started</span>
+      </div>
+      <div>
+        <img
+          src="https://cdn3.iconfinder.com/data/icons/geek-3/24/Nintendo_Switch_Logo_video_game-512.png"
+          alt="calender"
+          width="20px"
+        />
+        <span>API Guides</span>
+      </div>
+      <div>
+        <img
+          src="https://cdn3.iconfinder.com/data/icons/geek-3/24/Green_Lantern_movie_action-512.png"
+          alt="calender"
+          width="20px"
+        />
+        <span>Excel Generator</span>
+      </div>
+      <div>
+        <img
+          src="https://cdn1.iconfinder.com/data/icons/easter-2031/24/Tulip_spring_flower-512.png"
+          alt="calender"
+          width="20px"
+        />
+        <span>FAQ's</span>
+      </div>
+      <div>
+        <img
+          src="https://cdn1.iconfinder.com/data/icons/easter-2031/24/Easter_Message_port_card-512.png"
+          alt="calender"
+          width="20px"
+        />
+        <span>Terms & Conditions</span>
+      </div>
+      <div>
+        <img
+          src="https://cdn1.iconfinder.com/data/icons/easter-2031/24/Easter_Celebration_calendar_holiday-512.png"
+          alt="calender"
+          width="20px"
+        />
+        <span>Privacy Policy</span>
+      </div>
+      <div>
+        <img
+          src="https://cdn1.iconfinder.com/data/icons/easter-2031/24/Easter_Egg_Hunt_sign_mark-512.png"
+          alt="calender"
+          width="20px"
+        />
+        <span>Materials/Resources</span>
+      </div>
+    </div>
+
+    <div class="content">
+      <div>
+        <img
+          src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/file-indesign-512.png"
+          alt=""
+          width="40px"
+        />
+        <p>AnchorAPI</p>
+        <h1>Getting Started</h1>
+        <article>
+          <div class="underline">
+            <h3>Client side</h3>
+          </div>
+          <p>
+            <span>Quick tip</span>: javaScript interface for accessing and
+            manipulating parts of the protocol, such as requests and responses
+          </p>
+          <p>
+            This is a template of client side api request using fetch. All you
+            have to do if find the API that you would like to use on your
+            project.
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+              >Fetch Documentation</a
+            >
+          </p>
+          <pre>
+            <code [innerHTML]="fetch_api"></code>
+          </pre>
+        </article>
+
+        <article>
+          <div class="underline">
+            <h3>Server Side</h3>
+          </div>
+          <p>
+            <span>Quick tip</span>: Make sure to install axios and import it
+            into your file before you can use it
+          </p>
+          <p>
+            This is a template of server side api request using axios. All you
+            have to do if find the API that you would like to use on your
+            project.
+            <a href="https://www.npmjs.com/package/axios"
+              >Axios Documentation</a
+            >
+          </p>
+          <pre>
+            <code [innerHTML]="axios"></code>
+          </pre>
+        </article>
+
+        <article>
+          <div class="underline">
+            <h3>Guides</h3>
+          </div>
+          <p>
+            <span>Quick tip</span>: Dont forget to always add your apikey to
+            each request
+          </p>
+          <h5>How to get access</h5>
+          <ul>
+            <li>Sign up for an account.</li>
+            <li>Use the API key provided in the account dashboard.</li>
+            <li>Find and Api and use</li>
+          </ul>
+          <p>
+            This section will help you navigate the data you recieve back on
+            your API calls
+          </p>
+        </article>
+
+        <article>
+          <div class="underline">
+            <h3>Excel Generator</h3>
+          </div>
+          <p>
+            <span>Quick tip</span>: only takes arry of objects, nested objects
+            or nested arrays would return inconsistent data
+          </p>
+          <h5>How to get Generate Excel Document of Your Data</h5>
+          <ul>
+            <li>Unput your html into the broswer input</li>
+            <li>Click populate data (make sure it is the correct data)</li>
+            <li>Click on the generate fuction</li>
+          </ul>
+          <p>
+            Using this feature to convert your data into html docs, this will
+            only work on flatted arrays. If you have data is many times nested,
+            it might work but the data will not be sorted properly in the excel
+            tables. The objects inside can have as many key value pairs as you
+            want and it will still work for you
+          </p>
+
+          <pre>
+            <code [innerHTML]="generateable"></code>
+          </pre>
+        </article>
+        <article>
+          <div class="underline">
+            <h3>FAQ's</h3>
+          </div>
+          <p><span>Quick tip</span>: Frequently asked questions</p>
+          <ul>
+            <li>how do i get my apy key.</li>
+            <li>Where do i find my api key</li>
+            <li>who can use my api key</li>
+            <li>is this free</li>
+          </ul>
+          <p>
+            This section will help you navigate the data you recieve back on
+            your API calls
+          </p>
+        </article>
+        <article>
+          <div class="underline">
+            <h3>Terms And Conditions's</h3>
+          </div>
+          <p><span>Quick tip</span>: helps stay out of trouble</p>
+          <h5>Revised: April 29, 2022</h5>
+          <span>User Agreement</span>
+          <p>
+            These terms of service (these “Terms”) apply to the API
+            marketplace/network and other products and services (collectively,
+            the “Service”) provided by R Software Inc. (“RapidAPI”, “Mashape,”
+            “our,” or “we”) via rapidapi.com and market.mashape.com (the “Site”
+            or “Sites”). By registering to use the Service, accessing the
+            Service or providing access to any APIs via the Service, you agree
+            and acknowledge that you have read all of the terms and conditions
+            of these Terms, you understand all of the terms and conditions of
+            these Terms, and you agree to be legally bound by all of the terms
+            and conditions of these Terms. These Terms apply to individuals and
+            entities that provide access to APIs via the Service (“API
+            Providers”) and individuals and entities that obtain access to APIs
+            via the Service (“API Consumers”).
+            <br />
+            <br />
+            Unless otherwise specified, “you” refers to both API Providers and
+            API Consumers. The “Effective Date” of these Terms is the date you
+            first access the Service. RapidAPI reserves the right to change or
+            modify any of the terms and conditions contained in these Terms (or
+            any policy or guideline of RapidAPI) at any time and in its sole
+            discretion by providing notice that these Terms have been modified.
+            Such notice may be provided by sending an email, posting a notice on
+            the Site, posting the revised Terms on the Site and revising the
+            date at the top of these Terms, or such other form of notice as
+            determined by RapidAPI.
+            <br />
+            <br />
+            Any changes or modifications will be effective 7 days after
+            providing notice that these Terms have been modified (the “Notice
+            Period”). Your continued use of the Service following the Notice
+            Period will constitute your acceptance of such changes or
+            modifications. You are advised to review these Terms whenever you
+            access the Service and at least every 30 days to make sure that you
+            understand the terms and conditions that will apply to your use of
+            the Service.
+          </p>
+          <span>Copy Right Policy</span>
+          <p>
+            RapidAPI users may report content that appears on/via the Site or
+            Service to RapidAPI that he/she thinks violates these Terms, and
+            RapidAPI may remove such content, suspend or terminate the account
+            of the user who made posted such content and/or take additional
+            action to enforce these Terms against such user.
+          </p>
+          <span>Disclamer</span>
+          <p>
+            YOUR USE OF THE SERVICE IS AT YOUR SOLE RISK. THE SERVICE IS
+            PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS. RAPIDAPI DISCLAIMS
+            ALL WARRANTIES AND REPRESENTATIONS (EXPRESS OR IMPLIED, ORAL OR
+            WRITTEN) WITH RESPECT TO THESE TERMS, THE SERVICE, ANY OF THE APIS
+            PROVIDED VIA THE SERVICE, ANY API CONTENT/TERMS, ANY USER CONTENT,
+            THE SITE (INCLUDING ANY INFORMATION AND CONTENT MADE AVAILABLE VIA
+            THE SITE AND THE RAPIDAPI MATERIALS), THIRD-PARTY INFRASTRUCTURE (AS
+            DEFINED BELOW) AND THIRD-PARTY TRADEMARKS, WHETHER ALLEGED TO ARISE
+            BY OPERATION OF LAW, BY REASON OF CUSTOM OR USAGE IN THE TRADE, BY
+            COURSE OF DEALING OR OTHERWISE, INCLUDING ANY WARRANTIES OF
+            MERCHANTABILITY, FITNESS FOR ANY PURPOSE, NON-INFRINGEMENT, AND
+            CONDITION OF TITLE.
+            <br />
+            <br />
+            TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, RAPIDAPI DOES NOT
+            WARRANT, AND DISCLAIMS ALL LIABILITY FOR (A) THE COMPLETENESS,
+            ACCURACY, AVAILABILITY, TIMELINESS, SECURITY, OR RELIABILITY OF THE
+            SERVICE, ANY OF THE APIS PROVIDED VIA THE SERVICE, ANY USER CONTENT,
+            THE SITE (INCLUDING ANY INFORMATION OR CONTENT MADE AVAILABLE VIA
+            THE SITE), OR THIRD-PARTY TRADEMARKS; (B) ANY HARM TO YOUR COMPUTER
+            SYSTEM, LOSS OF DATA, OR OTHER HARM THAT RESULTS FROM YOUR ACCESS TO
+            OR USE OF THE SERVICE AND ANY API MADE AVAILABLE VIA THE SERVICE;
+            (C) THE DELETION OF, OR THE FAILURE TO STORE OR TRANSMIT, ANY USER
+            CONTENT AND OTHER COMMUNICATIONS MAINTAINED BY THE SERVICE; AND (D)
+            WHETHER THE SERVICE WILL MEET YOUR REQUIREMENTS OR BE AVAILABLE ON
+            AN UNINTERRUPTED, SECURE, OR ERROR-FREE BASIS.
+          </p>
+        </article>
+        <article>
+          <div class="underline">
+            <h3>Materials And Resources</h3>
+          </div>
+
+          <ul>
+            <li>incofinder.com</li>
+            <li>logogenerator</li>
+            <li>Rollbar</li>
+            <li>And more...</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

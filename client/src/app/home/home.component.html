@@ -1,0 +1,88 @@
+<section>
+  <div class="container">
+    <div class="banner">
+      <div class="b-img">
+        <img
+          src="https://cdn1.iconfinder.com/data/icons/camera-shutter-cartoon/512/g7580-512.png"
+          alt=""
+          width="200px"
+        />
+      </div>
+      <div>
+        <form action="" (ngSubmit)="search(item)">
+          <h1>Find API's</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
+            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <input
+            class="searchinput"
+            type="text"
+            name="search"
+            placeholder="Search Api"
+            id=""
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="categories">
+      <div class="category-generated"></div>
+    </div>
+    <div class="allapi">
+      <div class="api">
+        <a routerLink="/api" class="api" (click)="searchclick()">
+          <div>
+            <div id="searchvisible" class="apicontainer">
+              <div>
+                <h2>{{ apiMessage.name }}</h2>
+                <p>By: {{ apiMessage.creator }}</p>
+                <p>Description: {{ apiMessage.desc }}</p>
+                <p>Rating: {{ apiMessage.popularity }}</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a id="0" routerLink="/api" class="api" (click)="pinFun()">
+          <div>
+            <div class="apicontainer">
+              <div>
+                <h2 class="pinterest">{{ data[0].name }}</h2>
+                <p>By: {{ data[0].creator }}</p>
+                <p>Description: {{ data[0].desc }}</p>
+                <p>Rating: {{ data[0].popularity }}</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a id="1" routerLink="/api" class="api" (click)="weatFun()">
+          <div>
+            <div class="apicontainer">
+              <div>
+                <h2 class="weather">{{ data[1].name }}</h2>
+                <p>By: {{ data[1].creator }}</p>
+                <p>Description: {{ data[1].desc }}</p>
+                <p>Rating: {{ data[1].popularity }}</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a id="2" routerLink="/api" class="api" (click)="curFun()">
+          <div>
+            <div class="apicontainer">
+              <div>
+                <h2 class="currency">{{ data[2].name }}</h2>
+                <p>By: {{ data[2].creator }}</p>
+                <p>Description: {{ data[2].desc }}</p>
+                <p>Rating: {{ data[2].popularity }}</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

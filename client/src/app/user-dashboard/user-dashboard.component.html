@@ -1,0 +1,77 @@
+<section>
+  <p class="pleaselogin" *ngIf="message.email == null">Please Login!</p>
+  <div class="userdash">
+    <div class="profile">
+      <div class="userinfo">
+        <div class="img-div">
+          <img
+            src="https://cdn1.iconfinder.com/data/icons/life-of-amazon-flat/340/tarantula_spider_wildlife_insect_scary_dangerous_poison_amazon-512.png"
+            alt="spider icon"
+            width="100px"
+          />
+        </div>
+        <div class="user">
+          <p>First Name: {{ message.firstName }}</p>
+          <p>Last Name: {{ message.lastName }}</p>
+          <p>Email Address: {{ message.email }}</p>
+        </div>
+      </div>
+      <div class="about">
+        <div class="h-about">
+          <span>About</span>
+        </div>
+        <div class="info-about">
+          <div>
+            <img
+              src="https://cdn3.iconfinder.com/data/icons/leto-space/64/__rocket_launch-512.png"
+              alt="calender"
+              width="40px"
+            />
+            <span># of API Calls: 20</span>
+          </div>
+          <div>
+            <img
+              src="https://cdn3.iconfinder.com/data/icons/leto-user-group/64/__company_group_people-512.png"
+              alt="calender"
+              width="40px"
+            />
+            <span>Role: Student </span>
+          </div>
+          <div>
+            <img
+              src="https://cdn0.iconfinder.com/data/icons/leto-insurance-1/64/insurance_man_shield_man-512.png"
+              alt="calender"
+              width="40px"
+            />
+            <span>Date Join: 12/22/2022</span>
+          </div>
+          <div>
+            <img
+              src="https://cdn3.iconfinder.com/data/icons/leto-space/64/__ufo_flying_saucer-512.png"
+              alt="calender"
+              width="40px"
+            />
+            <span>Status: Active</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <h1>Welcome {{ message.firstName }} To Your Dashboard</h1>
+      <div>
+        <span>API Key: {{ message.apiKey }}</span>
+      </div>
+      <p>
+        Warning: Please keep this key private, You are to be the only one that
+        can use this api
+      </p>
+      <h4>Use</h4>
+      <p>
+        Install and use dotenv in the node package manager (NPM) and store your
+        api key as a variable there. Import using
+        process.env.Your_API_KEY_Variable_Name. Never put the key into your
+        hard.
+      </p>
+    </div>
+  </div>
+</section>

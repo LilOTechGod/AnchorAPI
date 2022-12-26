@@ -1,0 +1,100 @@
+<nav>
+  <div routerLink="/">
+    <div class="logo-containers">
+      <div class="logo-container">
+        <img
+          class="logo-img"
+          src="../assets/achorlogo.jpg"
+          alt=" logo"
+          width="40px"
+          with="40px"
+        />
+      </div>
+    </div>
+    <div>
+      <span class="logo-t">ANCHOR<span class="logo-t2"> API</span></span>
+    </div>
+  </div>
+  <div>
+    <a routerLink="/docs">Docs</a>
+    <a routerLink="/collections">API's</a>
+  </div>
+  <div>
+    <a *ngIf="message.email == null; else logout">
+      <a class="nav-btn2" routerLink="/signup">Signup</a>
+      <a class="nav-btn" routerLink="/login">Login</a>
+    </a>
+    <ng-template #logout>
+      <a routerLink="/userdash">Profile</a>
+      <div routerLink="/userdash" class="logo-containers">
+        <img
+          class="progile-logo"
+          src="https://cdn1.iconfinder.com/data/icons/life-of-amazon-flat/340/tarantula_spider_wildlife_insect_scary_dangerous_poison_amazon-512.png"
+          width="40px"
+          alt="profile image"
+        />
+      </div>
+      <a (click)="onSave()">Logout</a>
+    </ng-template>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+<footer>
+  <div class="footer-div-top">
+    <div>
+      <h5>Api</h5>
+      <p>Documentation</p>
+      <p>Getting Started</p>
+      <p>Terms& Privacy</p>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <p>Acount Us</p>
+      <p>Blog</p>
+      <p>Contact</p>
+    </div>
+    <div>
+      <h5>Subscribe to our news letter</h5>
+      <p>Subscribe to be the first one to know about updates.</p>
+      <input type="text" placeholder=" Email Address" />
+      <button>Subscribe</button>
+    </div>
+  </div>
+  <div class="footer-div-bottom">
+    <div>© 2021 Achor API. All rights reserved.</div>
+    <div>
+      <span>ANCHOR<span>API</span></span>
+    </div>
+    <div>
+      <a href="#">
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/1051/1051377.png"
+          alt=""
+          width="20"
+        />
+      </a>
+      <a href="#">
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/220/220343.png"
+          alt=""
+          width="20"
+        />
+      </a>
+      <a href="#">
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/1077/1077041.png"
+          alt=""
+          width="20"
+        />
+      </a>
+      <a href="#">
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/717/717392.png"
+          alt=""
+          width="20"
+        />
+      </a>
+    </div>
+  </div>
+</footer>

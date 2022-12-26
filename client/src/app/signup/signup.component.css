@@ -1,0 +1,36 @@
+.alert-danger {
+  background-color: red;
+}
+section {
+  min-height: 61vh;
+  height: 100%;
+}
+.container {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+.form-container {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  text-align: center;
+  padding-bottom: 30px;
+  border-radius: 5px;
+}
+.form-container * {
+  align-items: center;
+}
+button {
+  width: 54%;
+  height: 30px;
+  background-color: #1e55b3;
+  border: none;
+  color: white;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  border-radius: 5px;
+}

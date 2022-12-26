@@ -1,0 +1,60 @@
+<section>
+  <div class="container">
+    <form class="form-container" #login="ngForm" (ngSubmit)="submit(login)">
+      <h1>User Registration</h1>
+      <div class="form-group">
+        <label for="firstname">FirstName</label><br />
+        <input
+          required
+          minlength="2"
+          maxlength="7"
+          type="text"
+          name="firstname"
+          class="form-control"
+          #name="ngModel"
+          ngModel
+          placeholder="First Name"
+        />
+        <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+          <div *ngIf="name.errors?.['required']">Username Required!</div>
+          <p *ngIf="name.errors?.['minlength']">Sorry! Short Username</p>
+        </div>
+      </div>
+      <pre></pre>
+      <div class="form-group">
+        <label for="lastname">LastName</label><br />
+        <input
+          type="text"
+          name="lastname"
+          class="form-control"
+          ngModel
+          placeholder="Last Name"
+        />
+      </div>
+      <pre></pre>
+      <div class="form-group">
+        <label for="email">Email</label><br />
+        <input
+          type="text"
+          name="email"
+          class="form-control"
+          ngModel
+          placeholder="email"
+        />
+      </div>
+      <pre></pre>
+      <div class="form-group">
+        <label for="password">Password</label><br />
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          ngModel
+          placeholder="password"
+        />
+      </div>
+
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </div>
+</section>

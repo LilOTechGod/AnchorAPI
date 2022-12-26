@@ -1,0 +1,85 @@
+section {
+  min-height: 61vh;
+  height: 100%;
+  margin-top: 15px;
+}
+.topcontainer {
+  display: flex;
+}
+.rowcol {
+  display: flex;
+  width: 60%;
+}
+.image {
+  /* border: 2px solid black; */
+  margin-left: 20px;
+}
+.apicontrol {
+  display: flex;
+  min-height: 450px;
+  margin-bottom: 20px;
+}
+.query {
+  width: 50%;
+  border: 2px solid gray;
+  border-radius: 10px;
+  margin: 20px;
+}
+.query div {
+  padding: 10px;
+}
+.codesnipe {
+  width: 50%;
+  border: 2px solid gray;
+  margin: 20px;
+  border-radius: 10px;
+  display: flex;
+}
+.codesnipe div {
+  padding: 10px;
+}
+a {
+  text-decoration: none;
+  margin: 10px;
+  background-color: #1e55b3;
+  color: white;
+  padding: 5px;
+}
+.info {
+  display: flex;
+  margin-left: 15px;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.info p {
+  margin-top: 26px;
+  margin-left: 10px;
+}
+.info img {
+  margin-top: 28px;
+  margin-left: 10px;
+}
+.info-container {
+  display: flex;
+  justify-content: space-between;
+}
+.sub-heading {
+  margin-left: 15px;
+}
+h3 span {
+  font-size: 20px !important;
+  font-weight: lighter !important;
+}
+
+.result-data {
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid gray;
+  margin: 20px;
+  border-radius: 10px;
+  display: flex;
+}
+.result-data p {
+  margin: 10px;
+}

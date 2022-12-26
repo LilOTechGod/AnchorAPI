@@ -1,0 +1,142 @@
+html,
+body {
+  --darkblue: #1e55b3;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--darkblue);
+  padding: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  margin: 15px 10px 10px 10px;
+  height: 7vh;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.logo-img {
+  border-radius: 100%;
+}
+.logo-container {
+  width: 40px;
+  height: 40px;
+}
+.logo-containers {
+  margin-top: auto;
+  margin-bottom: auto;
+  align-items: center;
+  justify-content: center;
+}
+.progile-logo {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
+nav div {
+  display: flex;
+}
+.logo-t {
+  font-size: 16px;
+  position: relative;
+  font-weight: bold;
+  margin-left: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.logo-t2 {
+  color: #1e55b3;
+}
+
+nav div a {
+  margin-left: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 20px;
+  text-decoration: none;
+  color: #989898;
+}
+nav div a:nth-child(4) {
+  margin-right: 20px;
+}
+.nav-btn {
+  background-color: #1e55b3;
+  color: white !important;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 10px;
+}
+.nav-btn2 {
+  color: #0d0d12c1 !important;
+  font-weight: bold;
+}
+nav div img {
+  margin-left: 10px;
+}
+
+footer {
+  height: 100%;
+}
+.footer-div-top {
+  background-color: #2b2b39;
+  display: flex;
+  justify-content: space-between;
+  height: 19vh;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.footer-div-top div {
+  margin-right: 20px;
+  margin-left: 40px;
+}
+
+.footer-div-top div h5 {
+  color: #ffff;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+.footer-div-top div p {
+  color: #e7e7e7;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.footer-div-top div input {
+  box-shadow: none;
+  padding: 7px 20px;
+  border-radius: 0;
+  border: 2px solid white;
+  outline: none;
+  box-shadow: none;
+  width: 35%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: #0e0e0f00;
+  color: white;
+  margin-top: 13px;
+}
+.footer-div-top div button {
+  border: 0;
+  border-radius: 2px solid white;
+  padding: 9px 30px;
+  border-radius: 10px;
+  margin-left: -10px;
+  background-color: #ffff;
+}
+.footer-div-bottom {
+  background-color: #0d0d12;
+  color: #ffff;
+  display: flex;
+  justify-content: space-between;
+  height: 7vh;
+}
+.footer-div-bottom div {
+  margin: 15px;
+}
+.footer-div-bottom div img {
+  background-color: white;
+  margin-left: 5px;
+  border-radius: 10px;
+}
