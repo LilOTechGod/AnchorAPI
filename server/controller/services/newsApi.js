@@ -15,7 +15,13 @@ module.exports = {
             let compareApi = await Token.findOne({ api_key })
             console.log(compareApi)
             if (compareApi) {
-
+                let updatedCount = compareApi.use_count
+                updatedCount += 1
+                let find = { api_key: api_key }
+                let update = { use_count: updatedCount }
+                await Token.findOneAndUpdate(find, update, {
+                    new: true
+                })
                 const options = {
                     method: 'GET',
                     url: 'https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI',

@@ -1,90 +1,119 @@
 <section>
   <p class="pleaselogin" *ngIf="message.email == null">Please Login!</p>
+  <h1 class="aoverview">Account Overview</h1>
   <div class="userdash">
     <div class="profile">
-      <!-- <div class="userinfo"> -->
-      <!-- <div class="img-div">
-          <img
-            src="https://cdn1.iconfinder.com/data/icons/life-of-amazon-flat/340/tarantula_spider_wildlife_insect_scary_dangerous_poison_amazon-512.png"
-            alt="spider icon"
-            width="100px"
-          />
-        </div>
-        <div class="user">
-          <p>First Name: {{ message.firstName }}</p>
-          <p>Last Name: {{ message.lastName }}</p>
-          <p>Email Address: {{ message.email }}</p>
-        </div>
-      </div> -->
-
       <div class="card">
-        <img
-          src="https://cdn1.iconfinder.com/data/icons/life-of-amazon-flat/340/tarantula_spider_wildlife_insect_scary_dangerous_poison_amazon-512.png"
-          alt="Avatar"
-          style="width: 100%"
-        />
+        <img src="{{ message.url }}" alt="Avatar" width="63%" />
         <div class="container">
-          <div class="">
-            <p>First Name: {{ message.firstName }}</p>
-            <p>Last Name: {{ message.lastName }}</p>
+          <div class="info">
+            <div>
+              <p>First Name: {{ message.firstName }}</p>
+            </div>
+            <div>
+              <p>Last Name: {{ message.lastName }}</p>
+            </div>
+
             <p>Email Address: {{ message.email }}</p>
           </div>
         </div>
       </div>
-      <div class="about">
-        <div class="h-about"></div>
+      <div class="card">
         <div class="info-about">
-          <div>
+          <div class="a-info">
             <img
               src="https://cdn3.iconfinder.com/data/icons/leto-space/64/__rocket_launch-512.png"
               alt="calender"
               width="40px"
             />
-            <span># of API Calls: 20</span>
+            <div>
+              <span># of API Calls: {{ message.count }}</span>
+            </div>
           </div>
-          <div>
+          <div class="a-info">
             <img
               src="https://cdn3.iconfinder.com/data/icons/leto-user-group/64/__company_group_people-512.png"
               alt="calender"
               width="40px"
             />
-            <span>Role: Student </span>
+            <div>
+              <span>Role: {{ message.role }} </span>
+            </div>
           </div>
-          <div>
+          <div class="a-info">
             <img
               src="https://cdn0.iconfinder.com/data/icons/leto-insurance-1/64/insurance_man_shield_man-512.png"
               alt="calender"
               width="40px"
             />
-            <span>Date Join: 12/22/2022</span>
+            <div>
+              <span>Joined: {{ message.atCreate | date }}</span>
+            </div>
           </div>
-          <div>
+          <div class="a-info">
             <img
               src="https://cdn3.iconfinder.com/data/icons/leto-space/64/__ufo_flying_saucer-512.png"
               alt="calender"
               width="40px"
             />
-            <span>Status: Active</span>
+            <div>
+              <span>Status: Active</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="content">
-      <h1>Welcome {{ message.firstName }} To Your Dashboard</h1>
-      <div>
-        <span>API Key: {{ message.apiKey }}</span>
+      <h1>
+        Welcome to your dashboard, {{ message.firstName }}
+        {{ message.lastName }}!
+      </h1>
+      <p>
+        Manage your info, privacy, and security to make Anchor API work better
+        for you!
+      </p>
+      <div class="api-card">
+        <div class="api-card-inner">
+          <div>
+            <h4>API KEY</h4>
+            <span>{{ message.apiKey }}</span>
+          </div>
+          <p>
+            Warning: Please keep this key private, You are to be the only one
+            that can use this api
+          </p>
+        </div>
+        <td></td>
+        <div class="api-card-inner">
+          <h4>Use</h4>
+          <p>
+            Install and use dotenv in the node package manager (NPM) and store
+            your api key as a variable there. Import using
+            process.env.Your_API_KEY_Variable_Name. Never put the key into your
+            hard.
+          </p>
+        </div>
       </div>
-      <p>
-        Warning: Please keep this key private, You are to be the only one that
-        can use this api
-      </p>
-      <h4>Use</h4>
-      <p>
-        Install and use dotenv in the node package manager (NPM) and store your
-        api key as a variable there. Import using
-        process.env.Your_API_KEY_Variable_Name. Never put the key into your
-        hard.
-      </p>
+      <div class="suggestions">
+        <div>
+          <h4>Suggestions for API's</h4>
+          <p>
+            We reccomend that you using the newest api from our developed team!
+          </p>
+          <ul>
+            <li>Pinteret</li>
+            <li>Pokemon</li>
+            <li>Weather</li>
+          </ul>
+        </div>
+        <div>
+          <img
+            src="https://cdn3.iconfinder.com/data/icons/scenarium-vol-10/128/026-512.png"
+            alt=""
+            width="200vw"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </section>

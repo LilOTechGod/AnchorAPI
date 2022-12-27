@@ -15,6 +15,13 @@ let userSchema = new Schema(
         },
         password: {
             type: String,
+            required: true
+        },
+        role: {
+            type: String,
+        },
+        url: {
+            type: String,
         },
         access_token_id: { type: Schema.Types.ObjectId, ref: 'apikey' }
 

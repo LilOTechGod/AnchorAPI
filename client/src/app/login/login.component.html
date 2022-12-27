@@ -2,8 +2,8 @@
   <div class="container">
     <form class="form-container" #login="ngForm" (ngSubmit)="submit(login)">
       <h1>User Login</h1>
+      <p>Please enter the email and password to your account</p>
       <div class="form-group">
-        <label for="email">Email</label><br />
         <input
           required
           minlength="2"
@@ -13,6 +13,7 @@
           class="form-control"
           #name="ngModel"
           ngModel
+          placeholder="Email Address"
         />
         <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
           <div *ngIf="name.errors?.['required']">Email Required!</div>
@@ -22,11 +23,18 @@
 
       <pre></pre>
       <div class="form-group">
-        <label for="password">Password</label><br />
-        <input type="password" name="password" class="form-control" ngModel />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          class="form-control"
+          ngModel
+        />
       </div>
       <pre></pre>
       <button class="btn btn-primary" type="submit">Submit</button>
+      <hr />
+      <a href="/login">Forgot Password ?</a>
     </form>
   </div>
 </section>

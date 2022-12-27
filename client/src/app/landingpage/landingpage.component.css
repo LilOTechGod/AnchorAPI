@@ -1,5 +1,5 @@
 section {
-  height: 61vh;
+  height: 90vh;
   min-height: 100%;
 }
 .iframe {
@@ -8,17 +8,21 @@ section {
 }
 .row {
   display: flex;
+  margin: auto;
 }
 
 .intro {
   width: 45%;
   margin-left: 40px;
+  height: 90vh;
 }
 .intro h1 {
-  font-size: 40px;
+  font-size: 4vw;
+  font-weight: normal;
 }
 .intro p {
   color: #656464;
+  font-size: 1.6vw;
 }
 .intro button {
   display: flex;
@@ -32,16 +36,17 @@ section {
   justify-content: center;
   margin-top: 25px;
   border-radius: 10px;
+  font-size: 1.3vw;
 }
 .btn {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 45vw;
 }
 .btn button {
   display: flex;
-  width: 120px;
-  height: 40px;
+  width: 13vw;
+  height: 10vh;
   background-color: #1e55b3;
   border: none;
   color: white;
@@ -50,8 +55,13 @@ section {
   justify-content: center;
   filter: drop-shadow(0 0 0.75rem #1e55b3);
   margin-top: 15px;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 .btn button div {
-  margin-left: 10px;
+  margin-left: 0.3vw;
+  margin-top: 0.3vw;
+}
+
+.chevron {
+  color: white;
 }

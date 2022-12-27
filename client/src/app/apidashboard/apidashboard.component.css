@@ -1,6 +1,7 @@
 section {
   min-height: 61vh;
   height: 100%;
+  color: #666674;
 }
 .topcontainer {
   display: flex;
@@ -36,6 +37,7 @@ section {
 }
 .codesnipe div {
   padding: 10px;
+  width: 100%;
 }
 a {
   text-decoration: none;
@@ -105,3 +107,23 @@ h3 span {
     transform: rotate(360deg);
   }
 }
+.excelbtn {
+  width: 100%;
+  display: flex;
+}
+.excelbtn button {
+  height: 19%;
+  align-items: center;
+  text-align: center;
+}
+
+.loadingxbtn {
+  font-size: 14px;
+  transition-property: display;
+  transition-duration: 4s;
+  transition-delay: 2s;
+  display: none;
+}
+/* .loadingxbtn:hover {
+  font-size: 100px;
+} */

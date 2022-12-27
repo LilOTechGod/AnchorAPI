@@ -25,9 +25,3 @@ db.once('open', () => {
 
     })
 })
-
-
-
-
-
-console.log("hello")

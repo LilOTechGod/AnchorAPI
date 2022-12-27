@@ -1,6 +1,7 @@
-const xl = require('excel4node');
-const testData = [{ name: "me", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" },]
-
+var xl = require('excel4node');
+const testData = [{ name: "meee", color: "reds", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" }, { name: "chris", color: "red", some: "lol", red: "lol", small: "eeee" },]
+const axios = require("axios")
+const flatten = require("flat")
 // Create a new instance of a Workbook class
 function generateExcel(data) {
     var wb = new xl.Workbook();
@@ -18,11 +19,11 @@ function generateExcel(data) {
     });
 
     //make an array of all the titles we want to use to make our heading.
-    const keys = Object.keys(testData[0])
+    const keys = Object.keys(data[0])
 
     //makes an array of all the values similar to the keys
     let values = []
-    testData.forEach((el) => {
+    data.forEach((el) => {
         values.push(...Object.values(el))
     })
 
@@ -52,9 +53,8 @@ function generateExcel(data) {
 
 
     //change this depending on where you want to be built/ where you put the data
-    wb.write('./docs/Excel.xlsx');
+    wb.write('../client/src/assets/Excel.xlsx');
 }
-
 
 
 

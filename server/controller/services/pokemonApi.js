@@ -10,9 +10,17 @@ module.exports = {
 
             let { api_key } = req.query
             let compareApi = await Token.findOne({ api_key })
+
+
             if (compareApi) {  // console.log(testData.data[0].aqi)
                 // rollbar.info("working on the pokemon endpoint", { message: "data was sent successfully" }, compareApi)
-
+                let updatedCount = compareApi.use_count
+                updatedCount += 1
+                let find = { api_key: api_key }
+                let update = { use_count: updatedCount }
+                await Token.findOneAndUpdate(find, update, {
+                    new: true
+                })
                 res.status(200).json(data)
 
             } else {

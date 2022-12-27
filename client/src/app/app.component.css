@@ -2,7 +2,13 @@ html,
 body {
   --darkblue: #1e55b3;
 }
-
+a:hover,
+.logo-t:hover,
+.logo-t2:hover,
+.logo-img:hover,
+.chip:hover {
+  cursor: pointer;
+}
 nav {
   display: flex;
   justify-content: space-between;
@@ -44,6 +50,7 @@ nav div {
   margin-top: auto;
   margin-bottom: auto;
 }
+
 .logo-t2 {
   color: #1e55b3;
 }
@@ -65,27 +72,26 @@ nav div a:nth-child(4) {
   font-weight: bold;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 40px;
+  padding: 0.5vw 1vw 0.5vw 1vw;
 }
 .nav-btn2 {
   color: #0d0d12c1 !important;
   font-weight: bold;
 }
-nav div img {
-  margin-left: 10px;
+nav div span {
+  font-size: 25px;
+  color: #666674;
 }
 
 footer {
-  height: 100%;
+  height: 40vh;
 }
 .footer-div-top {
   background-color: #2b2b39;
   display: flex;
   justify-content: space-between;
-  height: 19vh;
-  margin-top: auto;
-  margin-bottom: auto;
+  height: 30vh;
 }
 .footer-div-top div {
   margin-right: 20px;
@@ -94,14 +100,14 @@ footer {
 
 .footer-div-top div h5 {
   color: #ffff;
-  margin-bottom: 10px;
-  margin-top: 15px;
+  margin-top: 30px;
+  margin-left: 10px;
+  font-size: 20px;
 }
 .footer-div-top div p {
   color: #e7e7e7;
-  font-size: 14px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  font-size: 16px;
+  margin: 10px;
 }
 .footer-div-top div input {
   box-shadow: none;
@@ -130,7 +136,7 @@ footer {
   color: #ffff;
   display: flex;
   justify-content: space-between;
-  height: 7vh;
+  height: 10vh;
 }
 .footer-div-bottom div {
   margin: 15px;
@@ -144,7 +150,7 @@ footer {
   display: inline-block;
   padding: 0 0px;
   height: 50px;
-  font-size: 16px;
+  font-size: 11px;
   line-height: 50px;
   border-radius: 25px;
   background-color: #eef0fd;
@@ -154,11 +160,12 @@ footer {
 
 .chip img {
   float: left;
-  margin: 0 10px 0 -20px;
+  margin: 0 10px 0 0px;
   height: 50px;
   width: 50px;
   border-radius: 50%;
 }
 .chip span {
   padding-right: 20px;
+  font-size: 2px;
 }

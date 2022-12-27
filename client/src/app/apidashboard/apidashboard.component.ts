@@ -31,12 +31,16 @@ export class ApidashboardComponent implements OnInit {
 
   apiReturnData: string | any;
   apiFinalReturn: string | any;
+  excelData: any;
 
   makeRequest(apiurl: any): void {
     let loading: any = document.querySelector('.loading');
-    loading.style.display = 'block';
     let url = apiurl.form.value.url;
+    if (url) {
+      loading.style.display = 'block';
+    }
     this.http.get(url).subscribe((res) => {
+      this.excelData = res;
       let stringify = JSON.stringify(res);
       this.apiReturnData = stringify.split(``);
       this.apiReturnData.forEach((el1: any, j: any) => {
@@ -51,12 +55,25 @@ export class ApidashboardComponent implements OnInit {
       if (this.apiFinalReturn) {
         loading.style.display = 'none';
         console.log('done');
+        return;
       }
     });
   }
 
   download() {
-    console.log('hello');
-    window.open('../../assets/anchorlogo.png', 'anchorlogo.png');
+    if (this.excelData) {
+      this.http
+        .post('http://localhost:4000/endpoint/excel', this.excelData)
+        .subscribe(() => {
+          console.log('done');
+        });
+      let xloading: any = document.querySelector('.loadingxbtn');
+      xloading.style.display = 'block';
+      setTimeout(() => {
+        window.open('../../assets/Excel.xlsx', 'Excel.xlsx');
+        console.log('waited complete');
+        xloading.style.display = 'none';
+      }, 900);
+    }
   }
 }

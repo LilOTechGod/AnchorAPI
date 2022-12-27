@@ -7,22 +7,38 @@ section {
 
 .userdash {
   display: flex;
+  margin: 0.5vw 3vw 5vw 3vw;
 }
 .profile {
   margin-left: 15px;
-  width: 30%;
+  width: 40%;
 }
-.userinfo {
-  display: flex;
+.aoverview {
+  font-size: 3.5vw;
+  margin-left: 2vw;
+  margin-top: 2.8vw;
+  margin-bottom: 1.3vw;
 }
 .img-div {
   margin-top: 15px;
   width: 110px;
   height: 110px;
-  border-radius: 10px;
+  border-radius: 50px;
   background-color: rgb(240, 242, 255);
 }
-
+img {
+  margin-left: 2vw;
+}
+.info {
+  padding-bottom: 0.5vw;
+}
+.info p {
+  margin-left: 2.5vw;
+}
+.info div {
+  width: 100%;
+  border-bottom: 1px solid rgb(206, 206, 206);
+}
 .about {
   margin-top: 20px;
 }
@@ -31,29 +47,28 @@ section {
   justify-content: center;
   align-items: center;
 }
-.h-about span {
-  width: 120px;
-  height: 40px;
-  background-color: #e7f0fe73;
-  color: #1e55b3;
-  font-weight: bold;
-  padding: 10px 20px 10px 20px;
-  border-radius: 10px;
-}
+
 .info-about {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 2.3vw;
 }
-.info-about div {
+.a-info {
   width: 100%;
   border-bottom: 1px solid rgb(206, 206, 206);
+  display: flex;
 }
-
+.a-info div {
+  margin-top: 1vw;
+}
+.a-info img {
+  padding: 0vw !important;
+}
 .info-about div span {
-  padding: 5px;
+  border-bottom: none;
 }
 .content {
-  margin-left: 40px;
+  margin-left: 7vw;
 }
 
 .card {
@@ -61,6 +76,11 @@ section {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px;
+  width: 23vw;
+}
+.card img {
+  padding: 23px;
+  border-radius: 50%;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -69,6 +89,30 @@ section {
 }
 
 /* Add some padding inside the card container */
-.container {
-  padding: 2px 16px;
+.api-card {
+  display: flex;
+}
+.api-card-inner {
+  width: 50%;
+  border: 1px solid rgb(206, 206, 206);
+  padding: 2vw;
+  border-radius: 10px;
+}
+td {
+  margin-left: 2vw;
+}
+
+.suggestions {
+  border: 1px solid rgb(206, 206, 206);
+  padding: 2vw;
+  border-radius: 10px;
+  margin-top: 2vw;
+  display: flex;
+}
+
+.suggestions img {
+  margin-left: 9vw;
+}
+.suggestions div {
+  width: 100%;
 }

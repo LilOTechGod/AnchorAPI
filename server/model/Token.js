@@ -8,6 +8,7 @@ let tokenSchema = new Schema(
             require: true
 
         },
+        use_count: { type: Number, default: 0 },
         user_id: { type: Schema.Types.ObjectId, ref: 'user' }
 
 

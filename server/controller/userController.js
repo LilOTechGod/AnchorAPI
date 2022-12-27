@@ -6,7 +6,10 @@ const secret = process.env.SECRET_TOKEN
 const { generateApiKey } = require('generate-api-key');
 const bcrypt = require("bcrypt")
 //user endpoint
+const icon = ["https://cdn2.iconfinder.com/data/icons/flat-animal-faces-icons/256/39-512.png", "https://cdn2.iconfinder.com/data/icons/flat-animal-faces-icons/256/26-512.png", "https://cdn2.iconfinder.com/data/icons/flat-animal-faces-icons/256/37-512.png", "https://cdn2.iconfinder.com/data/icons/flat-animal-faces-icons/256/43-512.png", "https://cdn2.iconfinder.com/data/icons/flat-animal-faces-icons/256/44-512.png", "https://cdn2.iconfinder.com/data/icons/flat-animal-faces-icons/256/02-512.png", "https://cdn2.iconfinder.com/data/icons/flat-animal-faces-icons/256/22-512.png", "https://cdn2.iconfinder.com/data/icons/flat-animal-faces-icons/256/15-512.png", "https://cdn2.iconfinder.com/data/icons/flat-animal-faces-icons/256/19-512.png", "https://cdn0.iconfinder.com/data/icons/science-volume-1-4/256/21-512.png", "https://cdn0.iconfinder.com/data/icons/seo-and-marketing-volume-1/256/76-512.png", "https://cdn2.iconfinder.com/data/icons/flat-animal-faces-icons/256/06-512.png", "https://cdn4.iconfinder.com/data/icons/halloween-vol-1/256/28-512.png", ""]
+
 module.exports = {
+
     createUser: async (req, res) => {
 
         try {
@@ -40,13 +43,19 @@ module.exports = {
             let lastExist = userData.last_name
             let accesskey = userData.access_token_id.api_key
             let checkPassword = await bcrypt.compare(password, userData.password)
+            let roleExist = userData.role
+            let urlExist = userData.url
+            let createdAtExist = userData.access_token_id.createdAt
+          
+
+            let usecount = userData.access_token_id.use_count
 
 
 
             if (checkPassword) {
 
                 //great a session using jwt, creats a token to be sent to the front end.
-                const token = jwt.sign({ email: emailExists, firstName: nameExist, lastName: lastExist, apiKey: accesskey }, secret, { expiresIn: "1h" });
+                const token = jwt.sign({ email: emailExists, firstName: nameExist, lastName: lastExist, apiKey: accesskey, role: roleExist, url: urlExist, count: usecount, atCreate: createdAtExist }, secret, { expiresIn: "1h" });
                 res.status(200).json({ token })
             }
 
@@ -60,6 +69,8 @@ module.exports = {
     },
     signUp: async (req, res) => {
         try {
+            let randomnum = Math.floor(Math.random() * 14);
+            let randomurl = icon[randomnum]
             let apikey = generateApiKey({ method: "string", pool: "abcdefghijklmnopqrstuvwxyz1234567890", min: 30 })
             //create api key
             let creatApiData = await new Token({ api_key: apikey }).save()
@@ -68,11 +79,11 @@ module.exports = {
             let apiData = await Token.findOne({ api_key: apikey }).populate("user_id")
             let accessTokenId = apiData.id
 
-            const { first_name, last_name, email, password } = req.body
+            const { first_name, last_name, email, password, role, } = req.body
             let hashed = await bcrypt.hash(password, 10);
 
 
-            let userData = await new User({ first_name: first_name, last_name: last_name, email: email, password: hashed, access_token_id: accessTokenId }).save()
+            let userData = await new User({ first_name: first_name, last_name: last_name, email: email, password: hashed, role: role, url: randomurl, access_token_id: accessTokenId }).save()
 
             res.status(200).json(userData)
 

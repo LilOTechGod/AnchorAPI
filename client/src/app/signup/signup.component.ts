@@ -20,6 +20,7 @@ export class SignupComponent implements OnInit {
         last_name: login.form.value.lastname,
         email: login.form.value.email,
         password: login.form.value.password,
+        role: login.form.value.role,
       })
       .subscribe((data) => {
         console.log(data);

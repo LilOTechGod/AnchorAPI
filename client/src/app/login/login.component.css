@@ -1,5 +1,5 @@
 section {
-  min-height: 61vh;
+  min-height: 90vh;
   height: 100%;
 }
 .container {
@@ -7,28 +7,63 @@ section {
   width: 50%;
   padding: 10px;
 }
+p {
+  color: #666666;
+}
+label {
+  font-size: 1.5vw;
+  padding-top: 1.3vw;
+}
+h1 {
+  font-size: 2.3vw;
+  font-weight: normal;
+}
+.form-group {
+  margin-top: 1vw;
+}
 .form-container {
   margin: auto;
-  width: 50%;
+  width: 38.2vw;
   padding: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   text-align: center;
-  padding-bottom: px;
+  padding-bottom: 3vw;
   border-radius: 5px;
+  height: 65vh;
 }
 .form-container * {
   text-align: center;
 }
-
+input {
+  height: 1.8vw;
+  width: 16vw;
+  margin-top: 1.5vw;
+  border-radius: 5px;
+  padding-top: 0.5vw;
+}
+input::placeholder {
+  font-size: 1.3vw;
+}
+hr {
+  width: 7vw;
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+}
 button {
-  width: 54%;
-  height: 30px;
+  width: 15vw;
+  height: 2.7vw;
   background-color: #1e55b3;
   border: none;
   color: white;
   font-weight: bold;
   align-items: center;
   justify-content: center;
-  margin-top: 15px;
-  border-radius: 5px;
+  margin-top: 1.2vw;
+  border-radius: 40px;
+  font-weight: bold;
+  font-size: 1.3vw;
+}
+
+a {
+  text-decoration: none;
 }
