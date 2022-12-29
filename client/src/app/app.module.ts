@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { DocumentationComponent } from './documentation/documentation.component';
+import { ExcelComponent } from './excel/excel.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { DocumentationComponent } from './documentation/documentation.component'
     UserDashboardComponent,
     LoginComponent,
     DocumentationComponent,
+    ExcelComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { ApidashboardComponent } from './apidashboard/apidashboard.component';
-
+import { ExcelComponent } from './excel/excel.component';
 const routes: Routes = [
   { path: 'collections', component: HomeComponent },
   { path: 'api', component: ApidashboardComponent },
@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'docs', component: DocumentationComponent },
   { path: 'userdash', component: UserDashboardComponent },
+  { path: 'excelgenerator', component: ExcelComponent },
   { path: '', redirectTo: '/landingpage', pathMatch: 'full' },
 ];
 

@@ -4,7 +4,7 @@ require("dotenv").config()
 const axios = require("axios")
 const { Token } = require("../../model")
 let rollbar = require("../../utils/rollbar")
-
+const { DEV_RAPIDAPI_KEY } = process.env
 module.exports = {
     getAllNews: async (req, res) => {
 
@@ -40,10 +40,19 @@ module.exports = {
                 };
 
                 axios.request(options).then(function (response) {
-                    let newsData = response.data
-                    res.status(200).json(newsData)
+                    let newsData = response.data.value
+                    let resultArr = []
+                    newsData.forEach((item) => {
+                        resultArr.push({
+                            title: item.title, url: item.url, description: item.description, body: item.body, snippet: item.snippet, datePublished:
+                                item.datePublished,
+                            provider: item.provider.name,
+                            image: item.image.url
+                        })
+                    })
+                    res.status(200).json(resultArr)
                 }).catch(function (error) {
-                    res.status(400).json({ error, Message: "bad request" })
+                    res.status(400).json({ error, Message: "bad request", resvole: "Check query params" })
                     // rollbar.error("endpoint failed, bad request")
 
                 });
@@ -52,7 +61,7 @@ module.exports = {
             } else {
                 // rollbar.error("invalid api keys")
 
-                res.status(200).json({ Error: "Bad Request", err: { Message: "NO API KEY FOUND WITH REQUEST", res: { resolve: "Create an account to get api key  acess" } } })
+                res.status(200).json({ Error: "Bad Request", err: { Message: "INVALID API KEY", res: { resolve: "check api key or Create an account to get api key" } } })
             }
         } catch (error) {
             res.status(400).json({ error, Message: "bad request" })

@@ -1,4 +1,12 @@
 <section>
+  <a class="backbutton" href="/collections">
+    <img
+      src="https://cdn2.iconfinder.com/data/icons/arrows-and-universal-actions-icon-set/256/left_circle-512.png"
+      alt=""
+      width="13px"
+    />
+    back to collections</a
+  >
   <div class="topcontainer">
     <div class="rowcol">
       <div class="image">
@@ -21,69 +29,147 @@
     <div class="l-info">
       <h1>{{ apiMessage.name }}</h1>
       <p>Last Update: {{ apiMessage.dateupdated }}</p>
+      <p>{{ apiMessage.desc }}</p>
     </div>
   </div>
   <div class="sub-heading">
-    <h4>{{ apiMessage.name }}</h4>
-    <p>{{ apiMessage.desc }}</p>
+    <div class="useParms">
+      <h3>Method: GET</h3>
+      <p id="ptag">URL Example : {{ apiMessage.url }}</p>
+      <h3>Query Paramaters</h3>
+      <span>Hint: These Go after the "?" in a URL</span>
+    </div>
+    <div class="generateExcel">
+      <button (click)="download()">
+        Generate
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/906/906310.png"
+          alt=""
+          width="28vw"
+        />
+      </button>
+      <div class="error">
+        <span>First make an api request!!</span>
+      </div>
+    </div>
   </div>
   <div class="dataapi">
     <div class="apicontrol">
       <div class="query">
-        <div>
-          <h3>Method: GET</h3>
-          <p>URL Example : {{ apiMessage.url }}</p>
-          <h3>Query Paramaters</h3>
-          <span>Hint: These Go after the "?" in a URL</span>
-          <p *ngFor="let param of apiMessage.endpoint.qureyparamter">
-            {{ param }}
-          </p>
-        </div>
-      </div>
-      <div class="codesnipe">
-        <div>
-          <h3>Make a request <span>(get only)</span></h3>
-          <form
-            class="form-container"
-            #apiurl="ngForm"
-            (ngSubmit)="makeRequest(apiurl)"
-          >
-            <h1>User Login</h1>
-            <pre></pre>
-            <div class="form-group">
-              <label for="url">URL:</label><br />
-              <input type="text" name="url" class="form-control" ngModel />
+        <form
+          class="form-container"
+          #apiurl="ngForm"
+          (ngSubmit)="makeRequest(apiurl)"
+        >
+          <div class="headingsubmit">
+            <h3>Make A Request <span>(GET only)</span></h3>
+            <button class="btn btn-primary" type="submit">Call API</button>
+          </div>
+          <div class="separators">
+            <svg
+              viewBox="64 64 896 896"
+              focusable="false"
+              data-icon="right"
+              width="1em"
+              height="1em"
+              fill="currentColor"
+              aria-hidden="true"
+              style="transform: rotate(90deg)"
+            >
+              <path
+                d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+              ></path>
+            </svg>
+            <span>Header Paramaters</span>
+          </div>
+
+          <div class="form-group">
+            <div class="inputparams">
+              <label for="input">Anchor API_KEY:</label>
+              <input type="text" name="input" class="form-control" ngModel />
             </div>
-            <pre></pre>
-            <button class="btn btn-primary" type="submit">Submit</button>
-          </form>
+          </div>
+          <div class="context">
+            <span>Enum</span>
+            <span>Required</span>
+          </div>
+          <div class="separators">
+            <svg
+              viewBox="64 64 896 896"
+              focusable="false"
+              data-icon="right"
+              width="1em"
+              height="1em"
+              fill="currentColor"
+              aria-hidden="true"
+              style="transform: rotate(90deg)"
+            >
+              <path
+                d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+              ></path>
+            </svg>
+            <span>Input Paramaters</span>
+          </div>
+          <div
+            *ngFor="let param of apiMessage.endpoint.qureyparamters"
+            class="form-group"
+          >
+            <div class="inputparams">
+              <label value="Mickey" for="input">{{ param.Params }}:</label>
+              <input type="text" name="input" class="form-control" ngModel />
+            </div>
+            <div class="context">
+              <span>{{ param.type }}</span>
+              <span> i.e ({{ param.example }})</span>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="result-data">
+        <div class="headingsubmit2">
           <div class="loading">
-            Loading...
+            <!-- Loading... -->
             <div class="loader"></div>
           </div>
         </div>
-        <div>
-          <div class="genexcel">
-            <h2>Generate excel</h2>
-            <p>
-              This generator only works with array of objects, this might work
-              on nested arrays but the data will be messy and require alot of
-              clean up
-            </p>
+        <div id="preview">
+          <div id="results">
+            <p *ngFor="let item of apiFinalReturn">{{ item }}</p>
           </div>
-          <button (click)="download()">
-            <img
-              src="https://cdn-icons-png.flaticon.com/128/906/906310.png"
-              alt=""
-              width="70vw"
-            />
-          </button>
-          <div class="loadingxbtn">████50%</div>
         </div>
       </div>
     </div>
-    <div class="result-data">
-      <p *ngFor="let item of apiFinalReturn">{{ item }}</p>
-    </div>
   </div>
+  <!-- <pre id="results">
+    "name": "Red Route",
+
+      "name": "Red Route",
+      "username": "Kayli_Reichert",
+      "rating": 4,
+      "favorites": 56,
+      "visits": 112,
+      "difficulty": 2,
+      "terrain": 1,
+      "size": "medium",
+      "created": "May 3, 2021",
+      "updated": "August 13, 2021",
+      "coords": "67.6459 -61.7263"
+      "name": "Red Route",
+      "name": "Red Route",
+
+      "name": "Red Route",
+      "username": "Kayli_Reichert",
+      "rating": 4,
+      "favorites": 56,
+      "visits": 112,
+      "difficulty": 2,
+      "terrain": 1,
+      "size": "medium",
+      "created": "May 3, 2021",
+      "updated": "August 13, 2021",
+      "coords": "67.6459 -61.7263"
+      "name": "Red Route",
+
+  </pre> -->
 </section>

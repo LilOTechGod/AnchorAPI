@@ -2,9 +2,17 @@ section {
   min-height: 61vh;
   height: 100%;
   color: #666674;
+  margin-bottom: -20px;
 }
+.backbutton {
+  background-color: #ced0d400;
+  color: #666674;
+  font-weight: bold;
+}
+
 .topcontainer {
   display: flex;
+  margin-top: 1rem;
 }
 .rowcol {
   display: flex;
@@ -22,8 +30,9 @@ section {
 .query {
   width: 50%;
   border: 2px solid gray;
-  border-radius: 10px;
-  margin: 20px;
+  margin-top: 5vh;
+  border-bottom: none;
+  border-top: none;
 }
 .query div {
   padding: 10px;
@@ -66,8 +75,54 @@ a {
   justify-content: space-between;
 }
 .sub-heading {
-  margin-left: 15px;
+  display: flex;
+  border-top: 2px solid rgb(230, 230, 230);
+  padding-left: 15px;
 }
+.paramContainer {
+  display: flex;
+}
+.useParms {
+  width: 84%;
+}
+.useParms h3,
+p,
+span {
+  margin-left: 1rem;
+}
+
+.paramcard {
+  margin-left: 1rem;
+  border: 2px solid gray;
+  max-width: 33%;
+  height: 30vh;
+  display: flex;
+  border-radius: 5px;
+}
+.paramcard div {
+  margin: 5px;
+}
+
+.generateExcel {
+  position: relative;
+  width: 15%;
+  margin-left: 1rem;
+}
+.generateExcel button {
+  position: absolute;
+  bottom: 0;
+  right: 10;
+  font-weight: bold;
+  font-size: 2.3vw;
+  border-radius: 10px;
+  border: none;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+}
+.generateExcel button img {
+  margin-bottom: -4px;
+}
+
 h3 span {
   font-size: 20px !important;
   font-weight: lighter !important;
@@ -77,25 +132,30 @@ h3 span {
   display: flex;
   flex-wrap: wrap;
   border: 2px solid gray;
-  margin: 20px;
-  border-radius: 10px;
+  margin-top: 5vh;
   display: flex;
+  width: 50%;
+  border-bottom: none;
+  border-top: none;
 }
 .result-data p {
   margin: 10px;
 }
 
 .loading {
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-left: 20vw;
   display: none;
 }
 
 .loader {
-  border: 7px solid #f3f3f3; /* Light grey */
-  border-top: 7px solid #3498db; /* Blue */
+  border: 7px solid #3498db; /* Light grey */
+  border-top: 7px solid white; /* Blue */
+  border-bottom: 7px solid white; /* Blue */
   border-radius: 50%;
-  width: 5px;
-  height: 5px;
+  background-color: black;
+  width: 30px !important;
+  height: 30px;
   animation: spin 2s linear infinite;
 }
 
@@ -117,6 +177,11 @@ h3 span {
   text-align: center;
 }
 
+button:hover {
+  background-color: rgb(230, 231, 231);
+  cursor: pointer;
+}
+
 .loadingxbtn {
   font-size: 14px;
   transition-property: display;
@@ -127,3 +192,105 @@ h3 span {
 /* .loadingxbtn:hover {
   font-size: 100px;
 } */
+
+.error {
+  background-color: rgba(255, 0, 0, 0.123);
+  border-radius: 5px;
+  border-left: 5px solid red;
+  width: 50% !important;
+  display: none;
+}
+.error span {
+  color: red;
+  padding: 2px;
+  font-size: 1vw;
+  width: 100% !important;
+}
+.headingsubmit {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f4f4f5;
+  color: #666674;
+  border-top: 2px solid rgb(230, 230, 230);
+  border-bottom: 2px solid rgb(230, 230, 230);
+  font-size: 1.3vw;
+}
+
+.headingsubmit2 {
+  height: 80.5px;
+  min-width: 49vw;
+  background-color: #f4f4f5;
+  color: #666674;
+  border-top: 2px solid rgb(230, 230, 230);
+  border-bottom: 2px solid rgb(230, 230, 230);
+}
+
+.btn {
+  width: 30%;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 2.5vw;
+  color: white;
+  background-color: #1e55b3;
+  border: none;
+}
+.btn:hover {
+  background-color: #3474e2;
+  cursor: pointer;
+}
+.separators {
+  height: 5vh;
+  background-color: #f4f4f5;
+  border-top: 2px solid rgb(230, 230, 230);
+  border-bottom: 2px solid rgb(230, 230, 230);
+  margin-top: 6vh;
+  width: 47.71vw;
+}
+.separators span {
+  font-weight: bold;
+}
+
+.form-group {
+}
+
+.form-group input {
+  width: 50%;
+  margin-left: 6rem;
+  padding-top: 5px;
+}
+.context {
+  /* margin-top: -20px; */
+}
+.context :nth-child(2) {
+  margin-left: 40%;
+}
+.context :nth-child(1) {
+  color: gray;
+}
+.inputparams {
+  display: flex;
+  justify-content: space-between;
+}
+
+#results {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  height: 30rem;
+  border: solid #cecece 1px !important;
+  margin-top: 0;
+  width: 100%;
+  padding: 5px;
+}
+
+#preview {
+  position: relative;
+  margin-top: -10px;
+  float: right;
+  width: 100%;
+  height: 85%;
+  overflow: scroll; /* Show scrollbars */
+  background-color: white;
+}

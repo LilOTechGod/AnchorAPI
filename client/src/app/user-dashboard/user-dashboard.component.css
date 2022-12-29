@@ -7,22 +7,22 @@ section {
 
 .userdash {
   display: flex;
-  margin: 0.5vw 3vw 5vw 3vw;
+  margin: 0.5vh 3vw 5vh 3vw;
 }
 .profile {
-  margin-left: 15px;
+  margin-left: 1.8vw;
   width: 40%;
 }
 .aoverview {
   font-size: 3.5vw;
   margin-left: 2vw;
-  margin-top: 2.8vw;
-  margin-bottom: 1.3vw;
+  margin-top: 6vh;
+  margin-bottom: 3vh;
 }
 .img-div {
-  margin-top: 15px;
-  width: 110px;
-  height: 110px;
+  margin-top: 3vh;
+  width: 40vw;
+  height: 40vh;
   border-radius: 50px;
   background-color: rgb(240, 242, 255);
 }

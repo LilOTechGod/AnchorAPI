@@ -1,0 +1,149 @@
+section {
+  min-height: 90vh;
+  height: 100%;
+  margin-top: -25px;
+}
+
+article {
+  background-image: url("../../assets/pexels-uzunov-rostislav-5011647.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 60vh;
+  height: 100%;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+  border-radius: 5px;
+  padding-bottom: 10rem;
+}
+article h1 {
+}
+article span {
+  font-size: 5vw;
+}
+article p {
+}
+.spacing {
+  width: 25px !important;
+  color: #cecece00;
+}
+article div {
+  margin-top: 40px;
+}
+.button {
+  height: 10vh;
+  background-color: #1e55b3;
+  border: none;
+  color: white;
+  font-weight: bold;
+  filter: drop-shadow(0 0 0.35rem #ffffff);
+  margin-top: 15px;
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+  font-size: 2vw;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: none;
+  margin-left: 40vw;
+}
+
+.loading {
+  /* margin-top: 20px; */
+  margin-left: 40vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  display: none;
+}
+
+.loader {
+  border: 9px solid #3498db; /* Light grey */
+  border-top: 9px solid rgb(27, 27, 27); /* Blue */
+  border-bottom: 9px solid rgb(15, 15, 15); /* Blue */
+  border-radius: 50%;
+  background-color: rgb(248, 244, 244);
+  width: 30px !important;
+  height: 30px;
+  animation: spin 2s linear infinite !important;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#results {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  height: 30rem;
+  border: solid #cecece 1px !important;
+  margin-top: 0;
+  width: 100%;
+  padding: 5px;
+}
+
+#preview {
+  position: relative;
+  margin-top: -10px;
+  float: right;
+  width: 100%;
+  height: 85%;
+  overflow: scroll; /* Show scrollbars */
+  background-color: white;
+}
+.image-container {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container form {
+  width: 80%;
+}
+
+.image-container form input {
+  width: 76%;
+  height: 2.5rem;
+  border-radius: 6px;
+  border: none;
+}
+.image-container form button {
+  width: 20%;
+  height: 2rem;
+  margin-left: -12.56rem;
+  border-right: 5.6px solid rgb(255, 255, 255);
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  background-color: #1e55b3;
+  color: white;
+  font-weight: bold;
+}
+.image-container form input::placeholder {
+  padding-left: 10rem;
+}
+.error {
+  margin-left: 25rem;
+  background-color: rgba(255, 161, 161, 0.192);
+  border-radius: 5px;
+  border-left: 5px solid red;
+  width: 30% !important;
+  display: none;
+  justify-items: center;
+  align-items: center;
+}
+.error span {
+  color: red;
+  padding: 2px;
+  font-size: 1vw;
+  width: 100% !important;
+}

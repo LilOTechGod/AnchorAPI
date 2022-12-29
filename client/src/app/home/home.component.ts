@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
     dateupdated: string;
   }[] = [
     {
-      name: 'Pinterest API',
+      name: 'Pinterest',
       creator: 'achorapi',
       url: 'http://localhost:4000/endpoint/pinterest?viewheight=1200&interest=nails&api_key=Your_api_key',
       imgurl:
@@ -60,30 +60,43 @@ export class HomeComponent implements OnInit {
       popularity: '10/10',
       endpoint: {
         apiurl: 'string',
-        qureyparamter: [
-          ' Params: interest=<string>.',
-          "example: interest=nails '",
-          ' Description: this is the term you would like to look up example.',
-          ' Params: viewheight=<number>.',
-          "example: viewheight=1200 '",
-          ' Description: This allows the screen to be longer, the more you can see the larger the data',
+        qureyparamters: [
+          {
+            Params: 'viewheight',
+            type: 'number ',
+            Description: 'this is the term you would like to look up example.',
+            example: '23000',
+          },
+          {
+            Params: 'interest',
+            type: 'string ',
+            Description: 'this is the term you would like to look up example.',
+            example: 'nails',
+          },
         ],
       },
       discussion: ['this is amazing', 'great api', 'wow this api does great'],
       dateupdated: '2 months ago',
     },
     {
-      name: 'Weather API',
+      name: 'Weather',
       creator: 'weatherbit',
-      url: 'http://localhost:4000/endpoint/weather?viewheight=1200&interest=nails&api_key=Your_api_key',
+      url: 'http://localhost:4000/endpoint/weather?city=austin&api_key=Your_api_key',
 
       imgurl:
         'https://cdn3.iconfinder.com/data/icons/luchesa-vol-9/128/Weather-512.png',
       desc: 'Current weather data API, and Weather forecast API - Basic access to the Weatherbit.io Weather API.',
       popularity: '10/10',
       endpoint: {
-        apiurl: 'https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly',
-        qureyparamters: ['hello', 'hello', 'apikey'],
+        apiurl: 'string',
+        qureyparamters: [
+          {
+            Params: 'city',
+            type: 'string ',
+            Description: 'this is the term you would like to look up example.',
+            example: 'austin',
+          },
+        ],
       },
       discussion: ['this is amazing', 'great api', 'wow this api does great'],
       dateupdated: '2 months ago',
@@ -99,12 +112,46 @@ export class HomeComponent implements OnInit {
       popularity: '10/10',
       endpoint: {
         apiurl: 'string',
-        qureyparamters: ['hello', 'hello', 'apikey'],
+        qureyparamters: [],
       },
       discussion: ['this is amazing', 'great api', 'wow this api does great'],
       dateupdated: '2 months ago',
     },
     {
+      name: 'News',
+      creator: 'Usearch',
+      url: 'http://localhost:4000/endpoint/news?search=oboma&page=1&size=10&api_key=Your_api_key',
+      imgurl:
+        'https://cdn2.iconfinder.com/data/icons/flat-set-2/64/flat_set_2-07-512.png',
+      desc: 'This api Allows you  find all news related to your search input, so add your search, add how many pages you want to search and how many items from that page to return ',
+      popularity: '6/10',
+      endpoint: {
+        apiurl: 'string',
+        qureyparamters: [
+          {
+            Params: 'search',
+            type: 'string ',
+            Description: 'this is the term you would like to look up example.',
+            example: 'obama',
+          },
+          {
+            Params: 'page',
+            type: 'number ',
+            Description: 'this is the term you would like to look up example.',
+            example: '1',
+          },
+          {
+            Params: 'size',
+            type: 'number ',
+            Description: 'this is the term you would like to look up example.',
+            example: '15',
+          },
+        ],
+      },
+      discussion: ['this is amazing', 'great api', 'wow this api does great'],
+      dateupdated: 'In developement',
+    },
+    {
       name: 'Coming Soon',
       creator: 'achorapi',
       url: 'http://localhost:4000/endpoint/',
@@ -114,7 +161,7 @@ export class HomeComponent implements OnInit {
       popularity: '0/10',
       endpoint: {
         apiurl: 'string',
-        qureyparamter: [
+        qureyparamters: [
           ' Params: params=<string>.',
           "example: params=nails '",
           ' Description: this is the term you would like to look up example.',
@@ -133,7 +180,7 @@ export class HomeComponent implements OnInit {
       popularity: '0/10',
       endpoint: {
         apiurl: 'string',
-        qureyparamter: [
+        qureyparamters: [
           ' Params: params=<string>.',
           "example: params=nails '",
           ' Description: this is the term you would like to look up example.',
@@ -152,7 +199,7 @@ export class HomeComponent implements OnInit {
       popularity: '0/10',
       endpoint: {
         apiurl: 'string',
-        qureyparamter: [
+        qureyparamters: [
           ' Params: params=<string>.',
           "example: params=nails '",
           ' Description: this is the term you would like to look up example.',
@@ -171,7 +218,7 @@ export class HomeComponent implements OnInit {
       popularity: '0/10',
       endpoint: {
         apiurl: 'string',
-        qureyparamter: [
+        qureyparamters: [
           ' Params: params=<string>.',
           "example: params=nails '",
           ' Description: this is the term you would like to look up example.',
@@ -190,7 +237,7 @@ export class HomeComponent implements OnInit {
       popularity: '0/10',
       endpoint: {
         apiurl: 'string',
-        qureyparamter: [
+        qureyparamters: [
           ' Params: params=<string>.',
           "example: params=nails '",
           ' Description: this is the term you would like to look up example.',
@@ -209,7 +256,7 @@ export class HomeComponent implements OnInit {
       popularity: '0/10',
       endpoint: {
         apiurl: 'string',
-        qureyparamter: [
+        qureyparamters: [
           ' Params: params=<string>.',
           "example: params=nails '",
           ' Description: this is the term you would like to look up example.',
@@ -228,7 +275,7 @@ export class HomeComponent implements OnInit {
       popularity: '0/10',
       endpoint: {
         apiurl: 'string',
-        qureyparamter: [
+        qureyparamters: [
           ' Params: params=<string>.',
           "example: params=nails '",
           ' Description: this is the term you would like to look up example.',
@@ -247,7 +294,7 @@ export class HomeComponent implements OnInit {
       popularity: '0/10',
       endpoint: {
         apiurl: 'string',
-        qureyparamter: [
+        qureyparamters: [
           ' Params: params=<string>.',
           "example: params=nails '",
           ' Description: this is the term you would like to look up example.',
@@ -266,26 +313,7 @@ export class HomeComponent implements OnInit {
       popularity: '0/10',
       endpoint: {
         apiurl: 'string',
-        qureyparamter: [
-          ' Params: params=<string>.',
-          "example: params=nails '",
-          ' Description: this is the term you would like to look up example.',
-        ],
-      },
-      discussion: ['this is amazing', 'great api', 'wow this api does great'],
-      dateupdated: 'In developement',
-    },
-    {
-      name: 'Coming Soon',
-      creator: 'achorapi',
-      url: 'http://localhost:4000/endpoint/',
-      imgurl:
-        'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
-      desc: 'This will soon be an api',
-      popularity: '0/10',
-      endpoint: {
-        apiurl: 'string',
-        qureyparamter: [
+        qureyparamters: [
           ' Params: params=<string>.',
           "example: params=nails '",
           ' Description: this is the term you would like to look up example.',
@@ -308,63 +336,76 @@ export class HomeComponent implements OnInit {
   curFun() {
     this.selectedapi.changeAPIData(this.data[2]);
   }
+  newFun() {
+    this.selectedapi.changeAPIData(this.data[3]);
+    console.log(this.data);
+  }
   comSoon() {
     this.selectedapi.changeAPIData(this.data[6]);
     console.log(this.data);
   }
   apiCard: any;
-  item: any;
+  // item: any;
   searchIndex: any;
   searchCard: any;
 
   threereslt: number = 0;
 
-  search(item: string) {
+  search() {
     this.apiCard = document.querySelectorAll('.apicontainer');
-    this.item = document.querySelector('.searchinput');
-    let save = this.item;
-    if (this.item.value !== '') {
-      this.item = this.item.value.trim().toLowerCase();
+    let item: any = document.querySelector('.searchinput');
+    let save = item;
+    if (item.value !== '') {
+      item = item.value.trim().toLowerCase();
       this.apiCard.forEach((element: any) => {
         element.style.display = 'none';
       });
-
+      let done: boolean = false;
       this.data.forEach((element, e) => {
+        if (done) {
+          return;
+        }
         let result = element.name.toLowerCase();
         let threefromdb = result.split('');
-        let threefrominput = this.item.split('');
+        let threefrominput = item.split('');
 
-        // for (let i = 0; i < threefrominput.length; i++) {
-        //   for (let j = 0; j < threefromdb.length; j++) {
-        //     if (threefrominput[j] == threefromdb[i]) {
-        //       this.threereslt++;
-        //     }
-        //   }
-        //   console.log(this.threereslt);
-        //   if (this.threereslt > 3) {
-        //     this.item = result;
-        //     if (result == this.item) {
-        //       this.selectedapi.changeAPIData(this.data[e]);
-        //       this.searchIndex = e;
-        //       this.threereslt = 0;
-        //       return;
-        //     }
-        //   }
-        // }
-        // if (this.threereslt > 3) {
-        //   return;
-        // }
-        // this.threereslt = 0;
+        for (let i = 0; i < threefrominput.length; i++) {
+          for (let j = 0; j < threefromdb.length; j++) {
+            // if (this.threereslt > 3) {
+            //   return;
+            // }
+            if (threefrominput[j] == threefromdb[i]) {
+              this.threereslt++;
+            }
+          }
 
-        if (result == this.item) {
-          this.selectedapi.changeAPIData(this.data[e]);
-          this.searchIndex = e;
+          console.log(threefrominput[0]);
+          console.log(threefromdb[0]);
+          console.log(this.threereslt);
+          if (this.threereslt > 2 && threefrominput[0] == threefromdb[0]) {
+            this.selectedapi.changeAPIData(this.data[e]);
+            this.searchIndex = e;
+            done = true;
+            this.threereslt = 0;
+            console.log(done);
+            return;
+          }
         }
+
+        this.threereslt = 0;
       });
 
       this.searchCard = document.querySelector('#searchvisible');
 
       this.searchCard.style.display = 'block';
+    }
+    console.log(item.value == ' ');
+    if (item.value == '') {
+      this.apiCard.forEach((element: any) => {
+        element.style.display = 'block';
+        this.searchCard = document.querySelector('#searchvisible');
+        this.searchCard.style.display = 'none';
+      });
     }
   }
 

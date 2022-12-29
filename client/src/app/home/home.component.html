@@ -5,11 +5,10 @@
         <img
           src="https://cdn1.iconfinder.com/data/icons/camera-shutter-cartoon/512/g7580-512.png"
           alt=""
-          width="210vw"
         />
       </div>
       <div>
-        <form action="" (ngSubmit)="search(item)">
+        <form action="" (ngSubmit)="search()">
           <h1>Find API's</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -88,16 +87,16 @@
             </div>
           </div>
         </a>
-        <a id="2" routerLink="/api" class="api" (click)="comSoon()">
+        <a id="2" routerLink="/api" class="api" (click)="newFun()">
           <div>
             <div class="apicontainer">
               <div>
-                <h2 class="comingsoon">{{ data[4].name }}</h2>
+                <h2 class="comingsoon">{{ data[3].name }}</h2>
                 <img src="{{ data[3].imgurl }}" alt="" width="40px" />
 
-                <p>By: {{ data[4].creator }}</p>
-                <p>Description: {{ data[4].desc }}</p>
-                <p>Rating: {{ data[4].popularity }}</p>
+                <p>By: {{ data[3].creator }}</p>
+                <p>Description: {{ data[3].desc }}</p>
+                <p>Rating: {{ data[3].popularity }}</p>
               </div>
             </div>
           </div>

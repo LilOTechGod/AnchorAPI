@@ -3,6 +3,12 @@
     <form class="form-container" #login="ngForm" (ngSubmit)="submit(login)">
       <h1>User Login</h1>
       <p>Please enter the email and password to your account</p>
+      <div class="error">
+        <p>
+          Please provide a valid email address and password. If you continue to
+          have issues logging into your account,
+        </p>
+      </div>
       <div class="form-group">
         <input
           required

@@ -16,16 +16,17 @@
     </div>
   </div>
   <div>
-    <a routerLink="/docs">Docs</a>
-    <a routerLink="/collections">API's</a>
+    <a class="acenter" routerLink="/excelgenerator">Excel Generator</a>
+    <a class="acenter" routerLink="/collections">API's</a>
+    <a class="acenter" routerLink="/docs">Docs</a>
   </div>
   <div>
-    <a *ngIf="message.email == null; else logout">
+    <div *ngIf="message.email == null; else logout">
       <a class="nav-btn2" routerLink="/signup">Signup</a>
       <a class="nav-btn" routerLink="/login">Login</a>
-    </a>
+    </div>
     <ng-template #logout>
-      <a routerLink="/userdash">Profile</a>
+      <a class="atag" routerLink="/userdash">Profile</a>
       <div routerLink="/userdash" class="chip">
         <img
           class="progile-logo"
@@ -35,7 +36,7 @@
         />
         <span> {{ message.firstName }} </span>
       </div>
-      <a (click)="onSave()">Logout</a>
+      <a class="atag" (click)="onSave()">Logout</a>
     </ng-template>
   </div>
 </nav>
@@ -59,7 +60,7 @@
       <h5>Subscribe to our news letter</h5>
       <p>Subscribe to be the first one to know about updates.</p>
       <input type="text" placeholder=" Email Address" />
-      <button>Subscribe</button>
+      <button href="">Subscribe</button>
     </div>
   </div>
   <div class="footer-div-bottom">

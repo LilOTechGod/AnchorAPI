@@ -13,7 +13,7 @@ h1 {
 form p {
   color: white;
   font-size: 1.2vw;
-  margin-top: -1.8vw;
+  margin-top: -1vh;
   margin-left: 2vw;
 }
 .api {
@@ -22,20 +22,33 @@ form p {
   text-decoration: none;
   color: #666674;
 }
+.apicontainer:hover {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
 .apicontainer {
   width: 22vw;
   border: 1px solid gray;
-  height: 25vw;
-  margin: 0px 1.26vw 2vw 1.25vw;
+  height: 52vh;
+  margin: 0px 1.26vw 5vh 1.25vw;
   border-radius: 10px;
   display: block;
 }
 .apicontainer div {
   padding-left: 1.8vw;
 }
+.apicontainer p {
+  font-size: 1.2vw;
+}
+.apicontainer h2 {
+  font-size: 1.9vw;
+}
 .allapi {
   margin-top: 4vh;
   /* margin-left: 3vw; */
+}
+.b-img img {
+  width: 17vw;
+  height: 35vh;
 }
 .banner {
   width: 98.7%;
@@ -47,14 +60,13 @@ form p {
   color: #343438;
   margin-left: 0.7vw;
   border-radius: 6px;
-  height: 16vw;
+  height: 35vh;
 }
 .banner .b-img {
   width: 20%;
 }
 
 .banner input {
-  width: 50%;
   width: 30vw;
   border: 0;
   padding: 1vw;

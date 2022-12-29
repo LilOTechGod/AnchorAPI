@@ -1,0 +1,46 @@
+<section>
+  <article>
+    <div class="spacing">_</div>
+    <span>Excel Generator</span>
+    <div>
+      <p>Convert Your API data into excel documents.</p>
+    </div>
+    <div>
+      <div class="error">
+        <span>First Enter A URL To Make An API Request!!</span>
+      </div>
+      <button class="button" (click)="download()">Generator Excel</button>
+    </div>
+
+    <div class="image-container">
+      <form #apiurl="ngForm" action="" (ngSubmit)="generatExcel(apiurl)">
+        <div class="searchContainer">
+          <input
+            class="searchinput"
+            type="text"
+            name="search"
+            placeholder="Enter API URL"
+            id=""
+            ngModel
+          />
+          <a href="#results">
+            <button href="#results" type="submit">Get Data</button>
+          </a>
+        </div>
+      </form>
+    </div>
+  </article>
+
+  <div class="result-data">
+    <div class="headingsubmit2"></div>
+    <div id="preview">
+      <div class="loading">
+        <!-- Loading... -->
+        <div class="loader"></div>
+      </div>
+      <div id="results">
+        <p *ngFor="let item of apiFinalReturn">{{ item }}</p>
+      </div>
+    </div>
+  </div>
+</section>

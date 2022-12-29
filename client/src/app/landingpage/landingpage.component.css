@@ -53,9 +53,10 @@ section {
   font-weight: bold;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 0 0.75rem #1e55b3);
+  filter: drop-shadow(0 0 0.35rem #1e55b3);
   margin-top: 15px;
   border-radius: 50px;
+  transition: all 0.2s ease-in-out;
 }
 .btn button div {
   margin-left: 0.3vw;
@@ -64,4 +65,10 @@ section {
 
 .chevron {
   color: white;
+}
+
+.btn button:hover {
+  transform: scale(1.1);
+  box-shadow: 6px 5px 8px rgba(128, 128, 128, 0.589);
+  filter: drop-shadow(0 0 0);
 }

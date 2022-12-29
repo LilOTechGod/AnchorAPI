@@ -69,7 +69,7 @@ module.exports = {
             } else {
                 // rollbar.error("invalid api key")
 
-                res.status(200).json({ Error: "Bad Request", err: { Message: "NO API KEY FOUND WITH REQUEST", res: { resolve: "Create an account to get api key  acess" } } })
+                res.status(200).json({ Error: "Bad Request", err: { Message: "INVALID API KEY", res: { resolve: "check api key or Create an account to get api key" } } })
             }
         } catch (error) {
             // rollbar.error("endpoint failed, bad request")

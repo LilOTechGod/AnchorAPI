@@ -6,9 +6,22 @@ a:hover,
 .logo-t:hover,
 .logo-t2:hover,
 .logo-img:hover,
-.chip:hover {
+.chip:hover,
+.nav-btn2:hover,
+.nav-btn:hover {
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
+.nav-btn:hover,
+.nav-btn2:hover {
+  transform: scale(1.1);
+}
+.acenter:hover,
+.atag:hover {
+  color: #6ca1fd;
+  border-bottom: 3px solid #1e55b3;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -43,28 +56,29 @@ nav div {
   display: flex;
 }
 .logo-t {
-  font-size: 16px;
+  font-size: 2vw;
   position: relative;
   font-weight: bold;
-  margin-left: 15px;
+  margin-left: 2vw;
   margin-top: auto;
   margin-bottom: auto;
 }
 
 .logo-t2 {
   color: #1e55b3;
+  font-size: 2vw;
 }
 
 nav div a {
-  margin-left: 20px;
+  margin-left: 2.5vw;
   margin-top: auto;
   margin-bottom: auto;
-  font-size: 20px;
+  font-size: 1.8vw;
   text-decoration: none;
   color: #989898;
 }
 nav div a:nth-child(4) {
-  margin-right: 20px;
+  margin-right: 3vw;
 }
 .nav-btn {
   background-color: #1e55b3;
@@ -80,7 +94,7 @@ nav div a:nth-child(4) {
   font-weight: bold;
 }
 nav div span {
-  font-size: 25px;
+  font-size: 1.7vw;
   color: #666674;
 }
 
@@ -94,24 +108,24 @@ footer {
   height: 30vh;
 }
 .footer-div-top div {
-  margin-right: 20px;
-  margin-left: 40px;
+  margin-right: 2vw;
+  margin-left: 1.5vw;
 }
 
 .footer-div-top div h5 {
   color: #ffff;
-  margin-top: 30px;
-  margin-left: 10px;
-  font-size: 20px;
+  margin-top: 4.5vh;
+  margin-left: 0.8vw;
+  font-size: 1.5vw;
 }
 .footer-div-top div p {
   color: #e7e7e7;
-  font-size: 16px;
-  margin: 10px;
+  font-size: 1.3vw;
+  margin: 1vw;
 }
 .footer-div-top div input {
   box-shadow: none;
-  padding: 7px 20px;
+  padding: 0.52vw 3vw;
   border-radius: 0;
   border: 2px solid white;
   outline: none;
@@ -121,14 +135,15 @@ footer {
   border-bottom-left-radius: 10px;
   background-color: #0e0e0f00;
   color: white;
-  margin-top: 13px;
+  margin-top: 1.2vw;
+  margin-left: 0.9vw;
 }
 .footer-div-top div button {
   border: 0;
   border-radius: 2px solid white;
-  padding: 9px 30px;
+  padding: 0.73vw 3vw;
   border-radius: 10px;
-  margin-left: -10px;
+  margin-left: -1vw;
   background-color: #ffff;
 }
 .footer-div-bottom {
@@ -139,33 +154,38 @@ footer {
   height: 10vh;
 }
 .footer-div-bottom div {
-  margin: 15px;
+  margin: 4vh;
 }
 .footer-div-bottom div img {
   background-color: white;
-  margin-left: 5px;
+  margin-left: 0.7vw;
   border-radius: 10px;
 }
 .chip {
   display: inline-block;
-  padding: 0 0px;
-  height: 50px;
-  font-size: 11px;
-  line-height: 50px;
+  padding: 0 0px 1vh;
+  height: 6vh;
+  font-size: 0.7vw;
+  line-height: 5.8vh;
   border-radius: 25px;
   background-color: #eef0fd;
-  margin-left: 10px;
-  margin-top: -3px;
+  margin-left: 1.8vw;
 }
 
 .chip img {
   float: left;
-  margin: 0 10px 0 0px;
-  height: 50px;
-  width: 50px;
+  margin: 0 1vw 0 0px;
+  height: 7vh;
+  width: 7vh;
   border-radius: 50%;
+  margin-bottom: 10vh;
 }
 .chip span {
-  padding-right: 20px;
-  font-size: 2px;
+  padding-right: 1vw;
+  font-size: 2vw;
+}
+
+footer button:hover {
+  background-color: rgb(240, 240, 240) !important;
+  cursor: pointer;
 }

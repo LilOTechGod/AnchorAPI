@@ -32,15 +32,54 @@ export class ApidashboardComponent implements OnInit {
   apiReturnData: string | any;
   apiFinalReturn: string | any;
   excelData: any;
-
+  defaultUrl: string = 'http://localhost:4000/endpoint';
   makeRequest(apiurl: any): void {
     let loading: any = document.querySelector('.loading');
-    let url = apiurl.form.value.url;
+
+    let url: string[] | any = [];
+    let defaultsstring: any = document.getElementById('ptag');
+    defaultsstring = defaultsstring.innerHTML;
+    defaultsstring = defaultsstring.slice(14).split('?');
+    let paramaString: any = defaultsstring[1].split('&amp;');
+    let arr: string[] = [];
+    paramaString.map((el: any) => {
+      arr.push(el.split('=')[0]);
+    });
+    url.push(defaultsstring[0]);
+    url.push('?');
+    let userinput: any = apiurl._directives;
+    let count: any = 0;
+    let sortedArrUserInput: any = [];
+    console.log(userinput);
+    userinput.forEach((el: any) => {
+      sortedArrUserInput.push(el.viewModel);
+    });
+    let popped = sortedArrUserInput.shift();
+    sortedArrUserInput.push(popped);
+    console.log(sortedArrUserInput);
+    sortedArrUserInput.forEach((el: any) => {
+      let converttoString = parseInt(el);
+      if (converttoString) {
+        el = converttoString;
+      }
+      url.push(arr[count]);
+      count++;
+      url.push('=');
+      url.push(el);
+      if (count !== userinput.size) {
+        url.push('&');
+      }
+    });
+    url = url.join('');
+
     if (url) {
       loading.style.display = 'block';
     }
+    console.log(url);
+
     this.http.get(url).subscribe((res) => {
       this.excelData = res;
+      console.log(res);
       let stringify = JSON.stringify(res);
       this.apiReturnData = stringify.split(``);
       this.apiReturnData.forEach((el1: any, j: any) => {
@@ -53,13 +92,15 @@ export class ApidashboardComponent implements OnInit {
 
       this.apiFinalReturn = this.apiReturnData.join('').split(',');
       if (this.apiFinalReturn) {
+        // let size = 20;
+        // this.apiFinalReturn = this.apiFinalReturn.slice(0, size);
         loading.style.display = 'none';
         console.log('done');
         return;
       }
     });
   }
-
+  showerror: any;
   download() {
     if (this.excelData) {
       this.http
@@ -67,13 +108,17 @@ export class ApidashboardComponent implements OnInit {
         .subscribe(() => {
           console.log('done');
         });
-      let xloading: any = document.querySelector('.loadingxbtn');
-      xloading.style.display = 'block';
+
+      this.showerror = document.querySelector('.error');
+      this.showerror.style.display = 'none';
       setTimeout(() => {
         window.open('../../assets/Excel.xlsx', 'Excel.xlsx');
         console.log('waited complete');
-        xloading.style.display = 'none';
       }, 900);
+    }
+    if (!this.excelData) {
+      this.showerror = document.querySelector('.error');
+      this.showerror.style.display = 'block';
     }
   }
 }

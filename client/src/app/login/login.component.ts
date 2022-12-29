@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  showerror: any;
   submit(login: any): void {
     this.http
       .post('http://localhost:4000/api/users/signin', {
@@ -37,7 +38,7 @@ export class LoginComponent implements OnInit {
         password: login.form.value.password,
       })
       .subscribe((data) => {
-        console.log(data);
+        // console.log(data);
         this.getJsonValue = data;
         this.decoded = decode(this.getJsonValue.token);
         this.data.changeMessage(this.decoded);
@@ -48,5 +49,11 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/userdash']);
         }
       });
+ 
+
+    setTimeout(() => {
+      this.showerror = document.querySelector('.error');
+      this.showerror.style.display = 'block';
+    }, 500);
   }
 }
