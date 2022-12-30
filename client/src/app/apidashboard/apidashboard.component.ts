@@ -55,13 +55,16 @@ export class ApidashboardComponent implements OnInit {
       sortedArrUserInput.push(el.viewModel);
     });
     let popped = sortedArrUserInput.shift();
+
     sortedArrUserInput.push(popped);
-    console.log(sortedArrUserInput);
     sortedArrUserInput.forEach((el: any) => {
-      let converttoString = parseInt(el);
+      console.log(el);
+      let converttoString = Number(el);
+      console.log(converttoString);
       if (converttoString) {
         el = converttoString;
       }
+      console.log(el);
       url.push(arr[count]);
       count++;
       url.push('=');

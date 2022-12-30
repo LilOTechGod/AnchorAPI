@@ -60,6 +60,15 @@
               <span>Status: Active</span>
             </div>
           </div>
+          <div class="delete">
+            <button (click)="ays()">Delete Account</button>
+            <div class="ays">
+              <p>Are you sure</p>
+              <button (click)="delAcnt()">YES</button>
+              <button (click)="aysNo()">NO</button>
+            </div>
+            <p class="id">{{ message.id }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -76,7 +85,14 @@
         <div class="api-card-inner">
           <div>
             <h4>API KEY</h4>
-            <span>{{ message.apiKey }}</span>
+            <span>
+              <img
+                src="https://cdn4.iconfinder.com/data/icons/general-office/91/General_Office_65-512.png"
+                width="14px"
+                alt=""
+              />
+              {{ message.apiKey }}</span
+            >
           </div>
           <p>
             Warning: Please keep this key private, You are to be the only one

@@ -46,8 +46,9 @@ module.exports = {
             let roleExist = userData.role
             let urlExist = userData.url
             let createdAtExist = userData.access_token_id.createdAt
-          
+            let idExist = userData.id
 
+            console.log(idExist)
             let usecount = userData.access_token_id.use_count
 
 
@@ -55,7 +56,7 @@ module.exports = {
             if (checkPassword) {
 
                 //great a session using jwt, creats a token to be sent to the front end.
-                const token = jwt.sign({ email: emailExists, firstName: nameExist, lastName: lastExist, apiKey: accesskey, role: roleExist, url: urlExist, count: usecount, atCreate: createdAtExist }, secret, { expiresIn: "1h" });
+                const token = jwt.sign({ email: emailExists, firstName: nameExist, lastName: lastExist, apiKey: accesskey, role: roleExist, url: urlExist, count: usecount, atCreate: createdAtExist, id: idExist }, secret, { expiresIn: "1h" });
                 res.status(200).json({ token })
             }
 
@@ -92,6 +93,19 @@ module.exports = {
 
         }
     },
+    deleteUser: async (req, res) => {
+
+        try {
+            let { id } = req.params
+            let userData = await User.findByIdAndRemove(id)
+            let tokenid = userData.access_token_id.api_key
+            console.log(tokenid)
+            let tokenData = await Token.findOneAndRemove(tokenid)
+            res.status(200).json({ userData, tokenData })
+        } catch (error) {
+            res.status(200).json({ Error: "Bad request" })
+        }
+    }
 
 
 }

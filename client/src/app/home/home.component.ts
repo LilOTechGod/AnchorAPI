@@ -132,7 +132,7 @@ export class HomeComponent implements OnInit {
             Params: 'search',
             type: 'string ',
             Description: 'this is the term you would like to look up example.',
-            example: 'obama',
+            example: 'obama, bitcoin',
           },
           {
             Params: 'page',
@@ -152,38 +152,51 @@ export class HomeComponent implements OnInit {
       dateupdated: 'In developement',
     },
     {
-      name: 'Coming Soon',
-      creator: 'achorapi',
-      url: 'http://localhost:4000/endpoint/',
+      name: 'Jokes',
+      creator: '15Dkatz',
+      url: 'http://localhost:4000/endpoint/jokes?count=10&type=general&api_key=Your_api_key',
       imgurl:
-        'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
-      desc: 'This will soon be an api',
-      popularity: '0/10',
+        'https://cdn3.iconfinder.com/data/icons/emoticons-vol-1/64/_clown-512.png',
+      desc: 'This api gives you list of jokes with punchlines',
+      popularity: '5/10',
       endpoint: {
         apiurl: 'string',
         qureyparamters: [
-          ' Params: params=<string>.',
-          "example: params=nails '",
-          ' Description: this is the term you would like to look up example.',
+          {
+            Params: 'count',
+            type: 'Number ',
+            Description: 'this is the number of jokes to return.',
+            example: '10',
+          },
+          {
+            Params: 'type',
+            type: 'string ',
+            Description:
+              'this is the categories of jokes (animals,christam,halloween,programming).',
+            example: 'gneral, programming,animal',
+          },
         ],
       },
       discussion: ['this is amazing', 'great api', 'wow this api does great'],
       dateupdated: 'In developement',
     },
     {
-      name: 'Coming Soon',
+      name: 'Coffee Store',
       creator: 'achorapi',
-      url: 'http://localhost:4000/endpoint/',
+      url: 'http://localhost:4000/endpoint/coffee?name=latte&api_key=Your_api_key',
       imgurl:
-        'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
-      desc: 'This will soon be an api',
-      popularity: '0/10',
+        'https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/coffee_zorro_avatar_cup-512.png',
+      desc: 'This gives you sample fake coffee shop items for your next project',
+      popularity: '7/10',
       endpoint: {
         apiurl: 'string',
         qureyparamters: [
-          ' Params: params=<string>.',
-          "example: params=nails '",
-          ' Description: this is the term you would like to look up example.',
+          {
+            Params: 'name',
+            type: 'string ',
+            Description: 'search by name.',
+            example: 'latte or leave blank to get all coffee ',
+          },
         ],
       },
       discussion: ['this is amazing', 'great api', 'wow this api does great'],
@@ -338,6 +351,14 @@ export class HomeComponent implements OnInit {
   }
   newFun() {
     this.selectedapi.changeAPIData(this.data[3]);
+    console.log(this.data);
+  }
+  jokFun() {
+    this.selectedapi.changeAPIData(this.data[4]);
+    console.log(this.data);
+  }
+  cofFun() {
+    this.selectedapi.changeAPIData(this.data[5]);
     console.log(this.data);
   }
   comSoon() {

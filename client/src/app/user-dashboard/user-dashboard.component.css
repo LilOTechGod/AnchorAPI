@@ -116,3 +116,18 @@ td {
 .suggestions div {
   width: 100%;
 }
+.delete {
+  margin: 10px;
+  margin-left: 5vw;
+}
+
+.id {
+  display: none;
+}
+.ays {
+  display: none;
+}
+.ays :nth-child(2) {
+  margin-right: 10px;
+  background: rgb(202, 44, 44);
+}

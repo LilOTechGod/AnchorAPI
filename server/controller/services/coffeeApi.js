@@ -1,19 +1,17 @@
-require("dotenv").config()
 const { Token } = require("../../model")
-const data = require("../../seeds/pokemon.json")
+const coffee = require("../../seeds/coffeestore.json")
 // let rollbar = require("../../utils/rollbar")
 
 module.exports = {
-    getPokemon: async (req, res) => {
+    getCoffee: async (req, res) => {
 
         try {
 
-            let { api_key } = req.query
+            let { api_key, name } = req.query
             let compareApi = await Token.findOne({ api_key })
 
 
             if (compareApi) {  // console.log(testData.data[0].aqi)
-                // rollbar.info("working on the pokemon endpoint", { message: "data was sent successfully" }, compareApi)
                 let updatedCount = compareApi.use_count
                 updatedCount += 1
                 let find = { api_key: api_key }
@@ -21,7 +19,22 @@ module.exports = {
                 await Token.findOneAndUpdate(find, update, {
                     new: true
                 })
-                res.status(200).json(data)
+
+                if (name) {
+                    let coffeeArr = []
+                    for (let i = 0; i < coffee.length; i++) {
+                        let title = coffee[i].title.toLowerCase();
+                        if (name == title)
+                            coffeeArr.push(coffee[i])
+
+                    }
+                    res.status(200).json(coffeeArr)
+
+                } else {
+
+                    res.status(200).json(coffee)
+                }
+
 
             } else {
                 // rollbar.error("invalid api keys")

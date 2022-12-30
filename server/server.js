@@ -7,13 +7,13 @@ const routes = require("./routes")
 const { PORT } = process.env
 
 const app = express()
-// app.use(cors)
+// appuse(cors)
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-    res.send("It works")
+    res.send("Your Server is up and running")
 })
 
 app.use(routes)
