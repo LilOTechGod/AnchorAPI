@@ -77,3 +77,8 @@ form p {
 #searchvisible {
   display: none;
 }
+
+.didyoumean {
+  display: none;
+  color: white;
+}

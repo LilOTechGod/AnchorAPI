@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
   }[] = [
     {
       name: 'Pinterest',
-      creator: 'achorapi',
+      creator: 'anchorapi',
       url: 'http://localhost:4000/endpoint/pinterest?viewheight=1200&interest=nails&api_key=Your_api_key',
       imgurl:
         'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678090-camera-512.png',
@@ -182,7 +182,7 @@ export class HomeComponent implements OnInit {
     },
     {
       name: 'Coffee Store',
-      creator: 'achorapi',
+      creator: 'Anchorapi',
       url: 'http://localhost:4000/endpoint/coffee?name=latte&api_key=Your_api_key',
       imgurl:
         'https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/coffee_zorro_avatar_cup-512.png',
@@ -204,7 +204,7 @@ export class HomeComponent implements OnInit {
     },
     {
       name: 'Coming Soon',
-      creator: 'achorapi',
+      creator: 'Anchorapi',
       url: 'http://localhost:4000/endpoint/',
       imgurl:
         'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
@@ -223,7 +223,7 @@ export class HomeComponent implements OnInit {
     },
     {
       name: 'Coming Soon',
-      creator: 'achorapi',
+      creator: 'Anchorapi',
       url: 'http://localhost:4000/endpoint/',
       imgurl:
         'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
@@ -242,7 +242,7 @@ export class HomeComponent implements OnInit {
     },
     {
       name: 'Coming Soon',
-      creator: 'achorapi',
+      creator: 'Anchorapi',
       url: 'http://localhost:4000/endpoint/',
       imgurl:
         'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
@@ -261,7 +261,7 @@ export class HomeComponent implements OnInit {
     },
     {
       name: 'Coming Soon',
-      creator: 'achorapi',
+      creator: 'Anchorapi',
       url: 'http://localhost:4000/endpoint/',
       imgurl:
         'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
@@ -280,7 +280,7 @@ export class HomeComponent implements OnInit {
     },
     {
       name: 'Coming Soon',
-      creator: 'achorapi',
+      creator: 'Anchorapi',
       url: 'http://localhost:4000/endpoint/',
       imgurl:
         'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
@@ -299,7 +299,7 @@ export class HomeComponent implements OnInit {
     },
     {
       name: 'Coming Soon',
-      creator: 'achorapi',
+      creator: 'Anchorapi',
       url: 'http://localhost:4000/endpoint/',
       imgurl:
         'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
@@ -318,7 +318,7 @@ export class HomeComponent implements OnInit {
     },
     {
       name: 'Coming Soon',
-      creator: 'achorapi',
+      creator: 'Anchorapi',
       url: 'http://localhost:4000/endpoint/',
       imgurl:
         'https://cdn3.iconfinder.com/data/icons/under-construction-3/500/42-512.png',
@@ -369,13 +369,12 @@ export class HomeComponent implements OnInit {
   // item: any;
   searchIndex: any;
   searchCard: any;
-
+  didYouMean: any;
   threereslt: number = 0;
 
   search() {
     this.apiCard = document.querySelectorAll('.apicontainer');
     let item: any = document.querySelector('.searchinput');
-    let save = item;
     if (item.value !== '') {
       item = item.value.trim().toLowerCase();
       this.apiCard.forEach((element: any) => {
@@ -392,23 +391,25 @@ export class HomeComponent implements OnInit {
 
         for (let i = 0; i < threefrominput.length; i++) {
           for (let j = 0; j < threefromdb.length; j++) {
-            // if (this.threereslt > 3) {
-            //   return;
-            // }
             if (threefrominput[j] == threefromdb[i]) {
               this.threereslt++;
             }
           }
 
-          console.log(threefrominput[0]);
-          console.log(threefromdb[0]);
-          console.log(this.threereslt);
-          if (this.threereslt > 2 && threefrominput[0] == threefromdb[0]) {
+          if (
+            this.threereslt > 2 &&
+            threefrominput[0] == threefromdb[0] &&
+            threefrominput[1] == threefromdb[1]
+          ) {
             this.selectedapi.changeAPIData(this.data[e]);
             this.searchIndex = e;
             done = true;
             this.threereslt = 0;
-            console.log(done);
+            if (threefromdb.join('') !== threefrominput.join('')) {
+              let didyou: any = document.querySelector('.didyoumean');
+              didyou.style.display = 'block';
+              this.didYouMean = threefromdb.join('');
+            }
             return;
           }
         }
@@ -426,6 +427,8 @@ export class HomeComponent implements OnInit {
         element.style.display = 'block';
         this.searchCard = document.querySelector('#searchvisible');
         this.searchCard.style.display = 'none';
+        let didyou: any = document.querySelector('.didyoumean');
+        didyou.style.display = 'none';
       });
     }
   }

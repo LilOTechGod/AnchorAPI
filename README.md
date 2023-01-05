@@ -1,4 +1,4 @@
-# Achor API
+# Anchor API
 
 Table of Contents
 
@@ -33,7 +33,6 @@ Backend
 [![Express](https://img.shields.io/badge/Tech-Express-red.svg)](https://opensource.org/licenses/MIT)
 [![Mongoose](https://img.shields.io/badge/Tech-CSS-lightgrey.svg)](https://opensource.org/licenses/MIT)
 
-
 ## User-Story
 
 ```
@@ -65,13 +64,17 @@ then run using
 ```
 node server.js
 ```
+
 ## Demo
+
 ![image](https://user-images.githubusercontent.com/63639477/209417889-748377b6-299e-4c59-8d49-87c3a4c0a5c3.png)
 
 ## links
- add deployed link here
+
+add deployed link here
 
 ## Tree
+
 ```
 .
 ├── Client
@@ -91,6 +94,7 @@ node server.js
 │   └── utils
 └── README.md
 ```
+
 ## liscences
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

@@ -26,7 +26,9 @@
       <a class="nav-btn" routerLink="/login">Login</a>
     </div>
     <ng-template #logout>
-      <a class="atag" routerLink="/userdash">Profile</a>
+      <a class="atag" routerLink="/userdash" (click)="rerenderUserInfo()"
+        >Profile</a
+      >
       <div routerLink="/userdash" class="chip">
         <img
           class="progile-logo"
@@ -36,7 +38,7 @@
         />
         <span> {{ message.firstName }} </span>
       </div>
-      <a class="atag" (click)="onSave()">Logout</a>
+      <a class="atag" (click)="logOut()">Logout</a>
     </ng-template>
   </div>
 </nav>
@@ -64,7 +66,7 @@
     </div>
   </div>
   <div class="footer-div-bottom">
-    <div>© 2021 Achor API. All rights reserved.</div>
+    <div>© 2021 Anchor API. All rights reserved.</div>
     <div>
       <span>ANCHOR<span>API</span></span>
     </div>

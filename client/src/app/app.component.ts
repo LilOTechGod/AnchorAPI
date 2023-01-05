@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserAuthService } from './user-auth.service';
 import { HomeComponent } from './home/home.component';
+import { HttpClient } from '@angular/common/http';
 
 import { Router } from '@angular/router';
 
@@ -12,14 +13,18 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'client';
   message: any | undefined;
-  constructor(private data: UserAuthService, private router: Router) {}
+  constructor(
+    private data: UserAuthService,
+    private router: Router,
+    private http: HttpClient
+  ) {}
   ngOnInit() {
     this.data.currentMessage.subscribe((message) => (this.message = message));
     this.checkifLoggedIn();
   }
   loggedout: null | any;
 
-  onSave(): void {
+  logOut(): void {
     this.loggedout = undefined;
     this.data.changeMessage(this.loggedout);
     if (!this.loggedout) {
@@ -39,5 +44,15 @@ export class AppComponent implements OnInit {
     if (logged) {
       this.data.changeMessage(logged);
     }
+  }
+  rerenderUserInfo() {
+    let renderinfo = this.data.newmessage.email;
+    this.http
+      .post('http://localhost:4000/api/users/update', {
+        email: renderinfo,
+      })
+      .subscribe((res: any) => {
+        this.data.newmessage.count = res.access_token_id.use_count;
+      });
   }
 }

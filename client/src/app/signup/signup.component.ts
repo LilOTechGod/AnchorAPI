@@ -56,6 +56,6 @@ export class SignupComponent implements OnInit {
     setTimeout(() => {
       this.showerror = document.querySelector('.error');
       this.showerror.style.display = 'block';
-    }, 600);
+    }, 900);
   }
 }

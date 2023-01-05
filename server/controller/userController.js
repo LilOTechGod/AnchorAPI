@@ -105,6 +105,16 @@ module.exports = {
         } catch (error) {
             res.status(200).json({ Error: "Bad request" })
         }
+    },
+    updateInfo: async (req, res) => {
+        try {
+            let { email } = req.body
+            let userData = await User.findOne({ email }).populate("access_token_id")
+            res.status(200).json(userData)
+        } catch (error) {
+            res.status(200).json({ Error: "Bad request", error })
+            console.log(error)
+        }
     }
 
 
