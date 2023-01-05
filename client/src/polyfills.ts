@@ -47,7 +47,7 @@
  */
 import 'zone.js'; // Included with Angular CLI.
 
-import 'core-js/es6/array';
+// import 'core-js/es6/array';
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
