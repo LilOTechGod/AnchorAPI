@@ -3,7 +3,7 @@ const cors = require("cors")
 const db = require("./config/configDB")
 const dotenv = require("dotenv")
 dotenv.config()
-const routes = require("./routes")
+const routes = require("./routes/UserRoutes")
 const { PORT } = process.env
 
 const app = express()
