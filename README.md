@@ -11,6 +11,7 @@ Anchor API is a full stack API service application that allows you to make API c
 
 
 Table of Contents:
+
 [1. Description](#Description)  
 [2. Technology](#Tech-Stack)  
 [3. Gettng Started](#Gettng-Started)  
@@ -80,7 +81,7 @@ npm start
 
 ## Demo
 
-[label](../../../Downloads/Untitled_%20Apr%2011%202023%2010_24%20AM.webm)
+[Untitled_ Apr 11 2023 10_24 AM.webm](https://user-images.githubusercontent.com/112797175/231222534-5e18b30a-71c9-41f9-a9dc-76c86f6bca85.webm)
 
 ## links
 
@@ -120,10 +121,10 @@ Created by Chiemeka Anunkor & Oscar Perez-Hernandez
 Please feel free to contact either one of us if you need any further information or for questions on how to contribute!
 
 - Email:
-    anunkorcc@gmail.com
-    perezoscar360@gmail.com
+   - anunkorcc@gmail.com
+   - perezoscar360@gmail.com
 
 
 - Github Profile
-    https://github.com/ChiemekaAnunkor
-    https://github.com/LilOTechGod    
+   - https://github.com/ChiemekaAnunkor
+   - https://github.com/LilOTechGod    
