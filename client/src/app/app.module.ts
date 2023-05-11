@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { ExcelComponent } from './excel/excel.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ExcelComponent } from './excel/excel.component';
     LoginComponent,
     DocumentationComponent,
     ExcelComponent,
+    ContactusComponent,
   ],
   imports: [
     BrowserModule,

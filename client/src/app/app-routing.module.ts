@@ -8,6 +8,8 @@ import { SignupComponent } from './signup/signup.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { ApidashboardComponent } from './apidashboard/apidashboard.component';
 import { ExcelComponent } from './excel/excel.component';
+import { ContactusComponent } from './contactus/contactus.component';
+
 const routes: Routes = [
   { path: 'collections', component: HomeComponent },
   { path: 'api', component: ApidashboardComponent },
@@ -19,6 +21,7 @@ const routes: Routes = [
   { path: 'userdash', component: UserDashboardComponent },
   { path: 'excelgenerator', component: ExcelComponent },
   { path: '', redirectTo: '/landingpage', pathMatch: 'full' },
+  { path: 'contactus', component: ContactusComponent },
 ];
 
 @NgModule({
